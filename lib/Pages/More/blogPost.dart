@@ -1,6 +1,8 @@
 import 'package:clipboard/clipboard.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:test_url/AppBars/normalAppBar.dart';
+import 'package:test_url/Components/customToast.dart';
 import 'package:test_url/Pages/customErrorWidget.dart';
 import 'package:test_url/Components/customIndicator.dart';
 import 'package:test_url/Functions/moreFunctions.dart';
@@ -20,9 +22,8 @@ class BlogPost extends StatefulWidget {
 }
 
 class _BlogPostState extends State<BlogPost> {
+  FToast fToast;
   final _scrollController = ScrollController();
-
-  var _isInit = true;
 
   final int _postId;
 
@@ -33,6 +34,13 @@ class _BlogPostState extends State<BlogPost> {
   String _content;
 
   _BlogPostState(this._postId);
+
+  @override
+  void initState() {
+    super.initState();
+    fToast = FToast();
+    fToast.init(context);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -185,7 +193,16 @@ class _BlogPostState extends State<BlogPost> {
                                                     '/' +
                                                     _postId.toString())
                                                 .then(
-                                                    (value) => print('copied'))
+                                              (value) => fToast.showToast(
+                                                child: CustomToast(
+                                                  'لینک کپی شد.',
+                                                  Icons.check,
+                                                ),
+                                                gravity: ToastGravity.BOTTOM,
+                                                toastDuration:
+                                                    Duration(seconds: 2),
+                                              ),
+                                            ),
                                           },
                                         ),
                                       ],

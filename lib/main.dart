@@ -29,7 +29,6 @@ class MyApp extends StatelessWidget {
 
 //.................... main features to do until 30 Azar, deadline of phase 1: ..........................
 //TODO: softWareTeam
-//TODO: fill button onPressed method
 //TODO: redundant content when resize screen in more pages bug
 //TODO: implement custom error
 //TODO: implement image provider and loader
