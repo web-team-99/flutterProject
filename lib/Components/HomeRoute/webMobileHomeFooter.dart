@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_url/Setting/numbers.dart';
 import 'package:test_url/Setting/serverUrl.dart';
+import 'package:test_url/Setting/strings.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class WebMobileHomeFooter extends StatelessWidget {
@@ -40,7 +41,7 @@ class WebMobileHomeFooter extends StatelessWidget {
               ),
               RaisedButton(
                 child: Text(
-                  'درباره ما',
+                  aboutUsPageTitle,
                   style: theme.textTheme.bodyText1,
                   textDirection: TextDirection.rtl,
                 ),
@@ -48,31 +49,31 @@ class WebMobileHomeFooter extends StatelessWidget {
               ),
               RaisedButton(
                 child: Text(
-                  'تماس با ما',
+                  contactUsPageTitle,
                   style: theme.textTheme.bodyText1,
                   textDirection: TextDirection.rtl,
                 ),
-                onPressed: () => contactUsUrl,
+                onPressed: () => _launchURL(contactUsUrl),
               ),
               RaisedButton(
                 child: Text(
-                  'تعرفه‌ها',
+                  pricingsPageTitle,
                   style: theme.textTheme.bodyText1,
                   textDirection: TextDirection.rtl,
                 ),
-                onPressed: () => pricingsUrl,
+                onPressed: () => _launchURL(pricingsUrl),
               ),
               RaisedButton(
                 child: Text(
-                  'قوانین و مقررات',
+                  rulesPageTitle,
                   style: theme.textTheme.bodyText1,
                   textDirection: TextDirection.rtl,
                 ),
-                onPressed: () => rulesUrl,
+                onPressed: () => _launchURL(rulesUrl),
               ),
               RaisedButton(
                 child: Text(
-                  'سؤالات متداول',
+                  faqPageTitle,
                   style: theme.textTheme.bodyText1,
                   textDirection: TextDirection.rtl,
                 ),
@@ -80,7 +81,7 @@ class WebMobileHomeFooter extends StatelessWidget {
               ),
               RaisedButton(
                 child: Text(
-                  'راهنمای سایت',
+                  manualPageTitle,
                   style: theme.textTheme.bodyText1,
                   textDirection: TextDirection.rtl,
                 ),
@@ -88,7 +89,7 @@ class WebMobileHomeFooter extends StatelessWidget {
               ),
               RaisedButton(
                 child: Text(
-                  'وبلاگ',
+                  blogPageTitle,
                   style: theme.textTheme.bodyText1,
                   textDirection: TextDirection.rtl,
                 ),
@@ -96,7 +97,7 @@ class WebMobileHomeFooter extends StatelessWidget {
               ),
               RaisedButton(
                 child: Text(
-                  'تیم توسعه',
+                  softwareTeamPageTitle,
                   style: theme.textTheme.bodyText1,
                   textDirection: TextDirection.rtl,
                 ),
