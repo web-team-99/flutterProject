@@ -1,4 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:test_url/Components/asyncImageLoader.dart';
+import 'package:test_url/Components/customIndicator.dart';
 import '../../models/ProviderModels/manualModel.dart';
 import 'CustomExpansionTile.dart';
 
@@ -68,10 +71,27 @@ class _ManualEntry extends StatelessWidget {
           ),
         ),
         if (manualEntry.imageUrl != null)
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10.0),
-            child: Image.network(manualEntry.imageUrl),
+          AspectRatio(
+            aspectRatio: 1.5,
+            child: Container(
+              // height: _width / 4,
+              width: double.infinity,
+              child: ClipRRect(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(10),
+                  topRight: Radius.circular(10),
+                  bottomLeft: Radius.circular(10),
+                  bottomRight: Radius.circular(10),
+                ),
+                child: AsyncImageLoader(manualEntry.imageUrl),
+              ),
+            ),
           ),
+        // ClipRRect(
+        //   borderRadius: BorderRadius.circular(10.0),
+        //   // child: Image.network(manualEntry.imageUrl),
+        //   child: AsyncImageLoader(manualEntry.imageUrl),
+        // ),
         Divider(),
       ],
     );

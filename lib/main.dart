@@ -31,4 +31,3 @@ class MyApp extends StatelessWidget {
 //TODO: softWareTeam
 //TODO: redundant content when resize screen in more pages bug
 //TODO: implement custom error
-//TODO: implement image provider and loader

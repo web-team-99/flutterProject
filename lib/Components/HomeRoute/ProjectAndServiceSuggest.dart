@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:test_url/Components/asyncImageLoader.dart';
 import 'package:test_url/Components/customIndicator.dart';
 import 'package:test_url/Functions/moreFunctions.dart';
 
@@ -36,12 +37,7 @@ class ProjectAndServiceSuggest extends StatelessWidget {
                     // height: _width / 4,
                     width: double.infinity,
 
-                    child: CachedNetworkImage(
-                      imageUrl: imageUrl,
-                      placeholder: (context, url) => CustomIndicator(),
-                      errorWidget: (context, url, error) => Icon(Icons.error),
-                      fit: BoxFit.cover,
-                    ),
+                    child: AsyncImageLoader(imageUrl),
                   ),
                 ),
                 Container(

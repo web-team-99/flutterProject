@@ -2,6 +2,7 @@ import 'package:clipboard/clipboard.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:test_url/AppBars/normalAppBar.dart';
+import 'package:test_url/Components/asyncImageLoader.dart';
 import 'package:test_url/Components/customToast.dart';
 import 'package:test_url/Pages/customErrorWidget.dart';
 import 'package:test_url/Components/customIndicator.dart';
@@ -96,14 +97,10 @@ class _BlogPostState extends State<BlogPost> {
                                   // height: _width / 4,
                                   width: double.infinity,
                                   child: ClipRRect(
-                                    borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(15),
-                                        topRight: Radius.circular(15)),
-                                    child: Image.network(
-                                      _imageUrl,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
+                                      borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(15),
+                                          topRight: Radius.circular(15)),
+                                      child: AsyncImageLoader(_imageUrl)),
                                 ),
                               ),
                               Padding(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:test_url/Components/CustomRaisedButton.dart';
+import 'package:test_url/Components/asyncImageLoader.dart';
 import 'package:test_url/Pages/More/blogPost.dart';
 import 'package:test_url/Setting/numbers.dart';
 import 'package:test_url/Styles/textStyles.dart';
@@ -36,10 +37,7 @@ class BlogPostElement extends StatelessWidget {
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(10),
                     topRight: Radius.circular(10)),
-                child: Image.network(
-                  _imageUrl,
-                  fit: BoxFit.cover,
-                ),
+                child: AsyncImageLoader(_imageUrl),
               ),
             ),
           ),
