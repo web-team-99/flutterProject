@@ -1,8 +1,8 @@
 String apiServer = 'http://138.201.6.240:8001';
 String mainServer = 'http://138.201.6.240';
-String debugServer = 'http://localhost:40389';
+String debugServer = 'http://192.168.1.104';
 
-bool isDebugVersion = true;
+bool isDebugVersion = false;
 String currentServer = isDebugVersion ? debugServer : mainServer;
 
 String homeRouteString = '/home';
