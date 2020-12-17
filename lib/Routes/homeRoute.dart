@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:test_url/AppBars/homeWebDesktopAppBar.dart';
-import 'package:test_url/AppBars/homeWebMobileAppBar.dart';
-import 'package:test_url/AppBars/normalAppBar.dart';
 import 'package:test_url/Components/CustomRaisedButton.dart';
 import 'package:test_url/Components/HomeRoute/ProjectAndServiceSuggest.dart';
 import 'package:test_url/Components/HomeRoute/homeListHeader.dart';
@@ -11,8 +8,6 @@ import 'package:test_url/Components/HomeRoute/webMobileHomeFooter.dart';
 import 'package:test_url/Components/HomeRoute/webMobileHomeImageAndText.dart';
 import 'package:test_url/Setting/numbers.dart';
 import 'package:test_url/Setting/strings.dart';
-import './../Styles/colors.dart';
-import './../Styles/textStyles.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 
 class HomeRoute extends StatefulWidget {
