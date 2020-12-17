@@ -8,6 +8,8 @@ import 'package:test_url/Styles/icons.dart';
 import 'package:test_url/providers/MorePageProviders/faqProvider.dart';
 import 'package:provider/provider.dart';
 
+import '../../Enums/moreOptionsEnum.dart';
+
 class Faq extends StatefulWidget {
   @override
   _FAQState createState() => _FAQState();
@@ -49,7 +51,7 @@ class _FAQState extends State<Faq> {
             } else {
               if (snapShot.hasError) {
                 print('no data');
-                return CustomErrorWidget();
+                return CustomErrorWidget(MoreOption.faq);
               } else {
                 return Scrollbar(
                   controller: _scrollController,

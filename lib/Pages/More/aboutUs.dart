@@ -8,6 +8,8 @@ import 'package:test_url/Styles/icons.dart';
 import 'package:test_url/providers/MorePageProviders/aboutUsProvider.dart';
 import 'package:provider/provider.dart';
 
+import '../../Enums/moreOptionsEnum.dart';
+
 class AboutUs extends StatefulWidget {
   _AboutUsState createState() => _AboutUsState();
 }
@@ -47,7 +49,7 @@ class _AboutUsState extends State<AboutUs> {
               return CustomIndicator();
             }
             if (snapShot.hasError) {
-              return CustomErrorWidget();
+              return CustomErrorWidget(MoreOption.aboutUs);
             }
             return Scrollbar(
               controller: _scrollController,

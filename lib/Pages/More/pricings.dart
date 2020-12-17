@@ -7,6 +7,8 @@ import 'package:test_url/Setting/strings.dart';
 import 'package:test_url/providers/MorePageProviders/pricingProvider.dart';
 import 'package:provider/provider.dart';
 
+import '../../Enums/moreOptionsEnum.dart';
+
 class Pricings extends StatefulWidget {
   @override
   _PricingsState createState() => _PricingsState();
@@ -45,7 +47,7 @@ class _PricingsState extends State<Pricings> {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting)
             return CustomIndicator();
-          if (snapshot.hasError) return CustomErrorWidget();
+          if (snapshot.hasError) return CustomErrorWidget(MoreOption.pricings);
           return Scrollbar(
             controller: _scrollController,
             isAlwaysShown: true,

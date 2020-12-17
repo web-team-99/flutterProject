@@ -8,6 +8,8 @@ import 'package:test_url/Styles/icons.dart';
 import 'package:test_url/providers/MorePageProviders/rulesProvider.dart';
 import 'package:provider/provider.dart';
 
+import '../../Enums/moreOptionsEnum.dart';
+
 class Rules extends StatefulWidget {
   @override
   _RulesState createState() => _RulesState();
@@ -48,7 +50,7 @@ class _RulesState extends State<Rules> {
             } else {
               if (snapShot.hasError) {
                 print('no data');
-                return CustomErrorWidget();
+                return CustomErrorWidget(MoreOption.rules);
               } else {
                 return Scrollbar(
                   controller: _scrollController,
