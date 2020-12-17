@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
-import 'package:test_url/AppBars/normalAppBar.dart';
 import 'package:test_url/Components/MoreRoute/moreGridElement.dart';
 import 'package:test_url/Enums/moreOptionsEnum.dart';
 import 'package:test_url/Functions/moreFunctions.dart';
 import 'package:test_url/Pages/More/blog.dart';
 import 'package:test_url/Setting/numbers.dart';
 import 'package:test_url/Setting/strings.dart';
-import 'package:test_url/Styles/colors.dart';
 
 class MoreRoute extends StatefulWidget {
   final MoreOption _moreOption;
@@ -29,7 +27,6 @@ class _MoreRouteState extends State<MoreRoute> {
   @override
   void initState() {
     super.initState();
-    print(_blogPostId);
 
     if (_moreOption != null) {
       if (_moreOption == MoreOption.blog && _blogPostId != null) {
@@ -82,7 +79,7 @@ class _MoreRouteState extends State<MoreRoute> {
           mainAxisSpacing: _mobileView ? 10.0 : _width / 30,
           shrinkWrap: true,
           children: [
-            ...(MoreOption.values as List<MoreOption>).map((option) {
+            ...(MoreOption.values).map((option) {
               return GridElement(option);
             }).toList(),
           ],

@@ -4,8 +4,6 @@ import 'package:test_url/Enums/moreOptionsEnum.dart';
 import 'package:test_url/Functions/moreFunctions.dart';
 import 'package:test_url/Setting/numbers.dart';
 
-import 'package:test_url/Styles/textStyles.dart';
-
 class GridElement extends StatelessWidget {
   final MoreOption _moreOption;
   final int blogPostId;

@@ -12,8 +12,6 @@ import 'package:test_url/Setting/strings.dart';
 import 'package:test_url/providers/MorePageProviders/blogPostProvider.dart';
 import 'package:provider/provider.dart';
 
-import '../../Enums/moreOptionsEnum.dart';
-
 class BlogPost extends StatefulWidget {
   final int _postId;
 
@@ -71,7 +69,7 @@ class _BlogPostState extends State<BlogPost> {
               return CustomIndicator();
             } else {
               if (snapShot.hasError) {
-                return CustomErrorWidget(MoreOption.blog, postId: _postId,);
+                return CustomErrorWidget();
               } else {
                 return Consumer<BlogPostProvider>(builder: (ctx, data, child) {
                   _title = data.blogPost[0]['title'];

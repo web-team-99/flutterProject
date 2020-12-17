@@ -1,8 +1,7 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:test_url/Components/asyncImageLoader.dart';
-import 'package:test_url/Components/customIndicator.dart';
 import 'package:test_url/Functions/moreFunctions.dart';
+import 'package:test_url/Setting/numbers.dart';
 
 class ProjectAndServiceSuggest extends StatelessWidget {
   final String imageUrl;
@@ -17,13 +16,15 @@ class ProjectAndServiceSuggest extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double _width = MediaQuery.of(context).size.width;
+    bool _mobileView = _width < mobileViewMaxWidth ? true : false;
     ThemeData theme = Theme.of(context);
 
     return InkWell(
       child: Card(
         child: Container(
-          width: 180,
-          height: 120,
+          width: _mobileView ? 150 : 240,
+          height: _mobileView ? 100 : 160,
           padding: EdgeInsets.all(10),
           child: ClipRRect(
             borderRadius: BorderRadius.all(

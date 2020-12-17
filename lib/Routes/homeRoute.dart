@@ -108,11 +108,14 @@ class _HomeRouteState extends State<HomeRoute> {
                   ),
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 20.0),
-                    height: 135,
+                    height: _mobileView
+                        ? (100 + 15) as double
+                        : (160 + 15) as double,
+                    // width: _width / 7,
                     child: ListView.builder(
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
-                      itemCount: 15,
+                      itemCount: 5,
                       itemBuilder: (BuildContext context, int index) =>
                           ProjectAndServiceSuggest(
                         'http://138.201.6.240:8001/media/blog_photos/increase-virgool.jpg',
@@ -129,11 +132,13 @@ class _HomeRouteState extends State<HomeRoute> {
                   ),
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 20.0),
-                    height: 135,
+                    height: _mobileView
+                        ? (100 + 15) as double
+                        : (160 + 15) as double,
                     child: ListView.builder(
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
-                      itemCount: 15,
+                      itemCount: 5,
                       itemBuilder: (BuildContext context, int index) =>
                           ProjectAndServiceSuggest(
                         'http://138.201.6.240:8001/media/blog_photos/omid4.jpg',
@@ -142,19 +147,17 @@ class _HomeRouteState extends State<HomeRoute> {
                       ),
                     ),
                   ),
+                  // kIsWeb
+                  //     ? Divider(
+                  //         height: 100,
+                  //         thickness: 3,
+                  //       )
+                  //     : SizedBox.shrink(),
                   kIsWeb
-                      ? Divider(
-                          height: 100,
-                          thickness: 3,
-                        )
+                      ? _mobileView
+                          ? WebMobileHomeFooter()
+                          : WebDesktopHomeFooter()
                       : SizedBox.shrink(),
-                  Card(
-                    child: kIsWeb
-                        ? _mobileView
-                            ? WebMobileHomeFooter()
-                            : WebDesktopHomeFooter()
-                        : SizedBox.shrink(),
-                  )
                 ],
               ),
             ),

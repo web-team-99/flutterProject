@@ -3,7 +3,6 @@ import 'package:test_url/Components/MoreRoute/manualWidget.dart';
 import 'package:test_url/Setting/numbers.dart';
 import 'package:test_url/Setting/strings.dart';
 import 'package:provider/provider.dart';
-import '../../Enums/moreOptionsEnum.dart';
 import '../customErrorWidget.dart';
 import '../../Components/customIndicator.dart';
 import '../../providers/MorePageProviders/manualProvider.dart';
@@ -48,7 +47,7 @@ class _ManualState extends State<Manual> {
               return CustomIndicator();
             }
             if (snapshot.hasError) {
-              return CustomErrorWidget(MoreOption.manual);
+              return CustomErrorWidget();
             }
             return Consumer<ManualProvider>(
               builder: (context, data, child) => Scrollbar(

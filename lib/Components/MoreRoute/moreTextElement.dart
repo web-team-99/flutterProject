@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:test_url/Styles/textStyles.dart';
 
 class MoreTextElement extends StatelessWidget {
   final Map<String, Object> item;

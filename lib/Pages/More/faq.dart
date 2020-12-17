@@ -8,8 +8,6 @@ import 'package:test_url/Styles/icons.dart';
 import 'package:test_url/providers/MorePageProviders/faqProvider.dart';
 import 'package:provider/provider.dart';
 
-import '../../Enums/moreOptionsEnum.dart';
-
 class Faq extends StatefulWidget {
   @override
   _FAQState createState() => _FAQState();
@@ -45,13 +43,11 @@ class _FAQState extends State<Faq> {
       body: FutureBuilder(
           future: faqData,
           builder: (ctx, snapShot) {
-            print(snapShot.connectionState);
             if (snapShot.connectionState == ConnectionState.waiting) {
               return CustomIndicator();
             } else {
               if (snapShot.hasError) {
-                print('no data');
-                return CustomErrorWidget(MoreOption.faq);
+                return CustomErrorWidget();
               } else {
                 return Scrollbar(
                   controller: _scrollController,

@@ -8,7 +8,7 @@ import 'Configures/configure_nonweb.dart'
     if (dart.library.html) 'Configures/configure_web.dart';
 
 void main() {
-  configureApp();
+  configureApp(); //remove # from web addresses
   FluroMainRouter.defineRoutes();
   runApp(MyApp());
 }
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: defaultTheme, //Theme for the bot. navbar
+      theme: defaultTheme,
       home: MainScreen(
         initialTab: MainTab.home,
       ),
@@ -29,5 +29,3 @@ class MyApp extends StatelessWidget {
 
 //.................... main features to do until 30 Azar, deadline of phase 1: ..........................
 //TODO: softWareTeam
-//TODO: redundant content when resize screen in more pages bug
-//TODO: implement custom error

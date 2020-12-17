@@ -12,105 +12,110 @@ class WebDesktopHomeFooter extends StatelessWidget {
     ThemeData theme = Theme.of(context);
 
     return Container(
-      margin: EdgeInsets.all(20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Column(
+      margin: EdgeInsets.only(top: 100),
+      child: Card(
+        child: Container(
+          margin: EdgeInsets.all(20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
-                margin: EdgeInsets.all(20),
-                width: _width / 10,
-                child: Image.asset('assets/logo.png'),
+              Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.all(20),
+                    width: _width / 10,
+                    child: Image.asset('assets/logo.png'),
+                  ),
+                  Text(
+                    'شرکت نام شرکت شما',
+                    style: theme.textTheme.bodyText1,
+                    textDirection: TextDirection.rtl,
+                  ),
+                  Text(
+                    'تمامی حقوق محفوظ است ©',
+                    style: theme.textTheme.bodyText1,
+                    textDirection: TextDirection.rtl,
+                  )
+                ],
               ),
-              Text(
-                'شرکت نام شرکت شما',
-                style: theme.textTheme.bodyText1,
-                textDirection: TextDirection.rtl,
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  RaisedButton(
+                    child: Text(
+                      faqPageTitle,
+                      style: theme.textTheme.bodyText1,
+                      textDirection: TextDirection.rtl,
+                    ),
+                    onPressed: () => _launchURL(faqUrl),
+                  ),
+                  RaisedButton(
+                    child: Text(
+                      manualPageTitle,
+                      style: theme.textTheme.bodyText1,
+                      textDirection: TextDirection.rtl,
+                    ),
+                    onPressed: () => _launchURL(manualUrl),
+                  ),
+                  RaisedButton(
+                    child: Text(
+                      blogPageTitle,
+                      style: theme.textTheme.bodyText1,
+                      textDirection: TextDirection.rtl,
+                    ),
+                    onPressed: () => _launchURL(blogUrl),
+                  ),
+                  RaisedButton(
+                    child: Text(
+                      softwareTeamPageTitle,
+                      style: theme.textTheme.bodyText1,
+                      textDirection: TextDirection.rtl,
+                    ),
+                    onPressed: () => _launchURL(softwareTeamUrl),
+                  ),
+                ],
               ),
-              Text(
-                'تمامی حقوق محفوظ است ©',
-                style: theme.textTheme.bodyText1,
-                textDirection: TextDirection.rtl,
-              )
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  RaisedButton(
+                    child: Text(
+                      aboutUsPageTitle,
+                      style: theme.textTheme.bodyText1,
+                      textDirection: TextDirection.rtl,
+                    ),
+                    onPressed: () => _launchURL(aboutUsUrl),
+                  ),
+                  RaisedButton(
+                    child: Text(
+                      contactUsPageTitle,
+                      style: theme.textTheme.bodyText1,
+                      textDirection: TextDirection.rtl,
+                    ),
+                    onPressed: () => _launchURL(contactUsUrl),
+                  ),
+                  RaisedButton(
+                    child: Text(
+                      pricingsPageTitle,
+                      style: theme.textTheme.bodyText1,
+                      textDirection: TextDirection.rtl,
+                    ),
+                    onPressed: () => _launchURL(pricingsUrl),
+                  ),
+                  RaisedButton(
+                    child: Text(
+                      rulesPageTitle,
+                      style: theme.textTheme.bodyText1,
+                      textDirection: TextDirection.rtl,
+                    ),
+                    onPressed: () => _launchURL(rulesUrl),
+                  ),
+                ],
+              ),
             ],
           ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              RaisedButton(
-                child: Text(
-                  faqPageTitle,
-                  style: theme.textTheme.bodyText1,
-                  textDirection: TextDirection.rtl,
-                ),
-                onPressed: () => _launchURL(faqUrl),
-              ),
-              RaisedButton(
-                child: Text(
-                  manualPageTitle,
-                  style: theme.textTheme.bodyText1,
-                  textDirection: TextDirection.rtl,
-                ),
-                onPressed: () => _launchURL(manualUrl),
-              ),
-              RaisedButton(
-                child: Text(
-                  blogPageTitle,
-                  style: theme.textTheme.bodyText1,
-                  textDirection: TextDirection.rtl,
-                ),
-                onPressed: () => _launchURL(blogUrl),
-              ),
-              RaisedButton(
-                child: Text(
-                  softwareTeamPageTitle,
-                  style: theme.textTheme.bodyText1,
-                  textDirection: TextDirection.rtl,
-                ),
-                onPressed: () => _launchURL(softwareTeamUrl),
-              ),
-            ],
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              RaisedButton(
-                child: Text(
-                  aboutUsPageTitle,
-                  style: theme.textTheme.bodyText1,
-                  textDirection: TextDirection.rtl,
-                ),
-                onPressed: () => _launchURL(aboutUsUrl),
-              ),
-              RaisedButton(
-                child: Text(
-                  contactUsPageTitle,
-                  style: theme.textTheme.bodyText1,
-                  textDirection: TextDirection.rtl,
-                ),
-                onPressed: () => _launchURL(contactUsUrl),
-              ),
-              RaisedButton(
-                child: Text(
-                  pricingsPageTitle,
-                  style: theme.textTheme.bodyText1,
-                  textDirection: TextDirection.rtl,
-                ),
-                onPressed: () => _launchURL(pricingsUrl),
-              ),
-              RaisedButton(
-                child: Text(
-                  rulesPageTitle,
-                  style: theme.textTheme.bodyText1,
-                  textDirection: TextDirection.rtl,
-                ),
-                onPressed: () => _launchURL(rulesUrl),
-              ),
-            ],
-          ),
-        ],
+        ),
       ),
     );
   }

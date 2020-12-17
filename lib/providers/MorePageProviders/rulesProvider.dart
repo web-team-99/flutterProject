@@ -5,7 +5,6 @@ import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 import '../../Setting/serverUrl.dart';
-import '../../models/ProviderModels/ruleModel.dart';
 
 class RuleProvider with ChangeNotifier {
   List<Map<String, String>> _rules;

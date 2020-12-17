@@ -12,8 +12,6 @@ import 'package:test_url/Styles/textStyles.dart';
 import 'package:test_url/providers/MorePageProviders/blogProvider.dart';
 import 'package:provider/provider.dart';
 
-import '../../Enums/moreOptionsEnum.dart';
-
 class Blog extends StatefulWidget {
   final int postId;
   final int _pageIndex;
@@ -66,7 +64,7 @@ class _BlogState extends State<Blog> {
               return CustomIndicator();
             } else {
               if (snapShot.hasError) {
-                return CustomErrorWidget(MoreOption.blog);
+                return CustomErrorWidget();
               } else {
                 return Scrollbar(
                   controller: _scrollController,

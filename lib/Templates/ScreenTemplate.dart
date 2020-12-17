@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_url/AppBars/normalAppBar.dart';
 import 'package:test_url/Setting/numbers.dart';
-import 'package:test_url/Setting/strings.dart';
-import 'package:test_url/Styles/colors.dart';
 
 //....!!!!....!!!!....!!!!....!!!!....!!!!....!!!!....!!!!....!!!!....!!!!....!!!!....!!!!....!!!!
 //this is just a template for creating new pages
@@ -10,43 +7,34 @@ import 'package:test_url/Styles/colors.dart';
 //....!!!!....!!!!....!!!!....!!!!....!!!!....!!!!....!!!!....!!!!....!!!!....!!!!....!!!!....!!!!
 
 class ScreenTemplate extends StatelessWidget {
+  final _scrollController = ScrollController();
   @override
   Widget build(BuildContext context) {
     double _width = MediaQuery.of(context).size.width;
     bool _mobileView = _width < mobileViewMaxWidth ? true : false;
+    ThemeData theme = Theme.of(context);
 
-    return Container(
-      color: backgroundColor,
-      child: Stack(children: [
-        Container(
-          alignment: Alignment.center,
-          margin: EdgeInsets.only(
-            top: appBarHeight + pagesTopMargin,
-          ),
-          child: SingleChildScrollView(
-            child: Container(
+    return Scaffold(
+      backgroundColor: theme.backgroundColor,
+      appBar: AppBar(
+        title: Text('title'),
+      ),
+      body: Scrollbar(
+        controller: _scrollController,
+        isAlwaysShown: true,
+        child: SingleChildScrollView(
+          controller: _scrollController,
+          child: Container(
               margin: EdgeInsets.only(
+                top: pagesTopMargin,
                 bottom: pagesBottomMargin,
                 left: pagesRightAndLeftMargin(_width, _mobileView),
                 right: pagesRightAndLeftMargin(_width, _mobileView),
               ),
-              child: Column(
-                children: [
-                  Text('this is just a template for creating new pages.'),
-                  Text('never use this class!'),
-                  Text(
-                      'for create new pages, don\'t rermove Container/Stack/Container classes.'),
-                  Text('these are necessary for appbar'),
-                  Text('also don\'t edit color and margin'),
-                  Text(
-                      'don\'t forget to add page title in strings and edit NormalAppBar arguments'),
-                ],
-              ),
-            ),
-          ),
+              child: Text(
+                  'don\'t use this screen anywhere. this is just a template.')),
         ),
-        NormalAppBar(templatePageTitle, true),
-      ]),
+      ),
     );
   }
 }

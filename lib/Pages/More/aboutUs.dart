@@ -49,7 +49,7 @@ class _AboutUsState extends State<AboutUs> {
               return CustomIndicator();
             }
             if (snapShot.hasError) {
-              return CustomErrorWidget(MoreOption.aboutUs);
+              return CustomErrorWidget();
             }
             return Scrollbar(
               controller: _scrollController,
@@ -64,7 +64,6 @@ class _AboutUsState extends State<AboutUs> {
                     right: pagesRightAndLeftMargin(_width, _mobileView),
                   ),
                   child: Consumer<AboutUsProvider>(builder: (ctx, d, child) {
-                    //print(d.aboutUs[0]['id']);
                     return Column(
                       children: [
                         ...(d.aboutUs as List<Map<String, Object>>).map((item) {

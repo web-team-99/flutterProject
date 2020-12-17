@@ -1,7 +1,5 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:test_url/Components/asyncImageLoader.dart';
-import 'package:test_url/Components/customIndicator.dart';
 import '../../models/ProviderModels/manualModel.dart';
 import 'CustomExpansionTile.dart';
 
@@ -12,7 +10,6 @@ class ManualWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(manualModel.entries[0].imageUrl);
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Container(

@@ -8,8 +8,6 @@ import 'package:test_url/Styles/icons.dart';
 import 'package:test_url/providers/MorePageProviders/contactUsProvider.dart';
 import 'package:provider/provider.dart';
 
-import '../../Enums/moreOptionsEnum.dart';
-
 class ContactUs extends StatefulWidget {
   @override
   _ContactUsState createState() => _ContactUsState();
@@ -46,13 +44,11 @@ class _ContactUsState extends State<ContactUs> {
       body: FutureBuilder(
           future: contactdata,
           builder: (ctx, snapShot) {
-            print(snapShot.connectionState);
             if (snapShot.connectionState == ConnectionState.waiting) {
               return CustomIndicator();
             } else {
               if (snapShot.hasError) {
-                print('no data');
-                return CustomErrorWidget(MoreOption.contactUs);
+                return CustomErrorWidget();
               } else {
                 return Scrollbar(
                   controller: _scrollController,
