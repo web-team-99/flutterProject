@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:test_url/AppBars/normalAppBar.dart';
 import 'package:test_url/Pages/customErrorWidget.dart';
 import 'package:test_url/Components/customIndicator.dart';
 import 'package:test_url/Components/MoreRoute/moreTextElement.dart';
@@ -9,8 +8,25 @@ import 'package:test_url/Styles/icons.dart';
 import 'package:test_url/providers/MorePageProviders/contactUsProvider.dart';
 import 'package:provider/provider.dart';
 
-class ContactUs extends StatelessWidget {
+class ContactUs extends StatefulWidget {
+  @override
+  _ContactUsState createState() => _ContactUsState();
+}
+
+class _ContactUsState extends State<ContactUs> {
   final _scrollController = ScrollController();
+  Future contactdata;
+
+  @override
+  void initState() {
+    super.initState();
+    contactdata = _getContactData();
+  }
+
+  _getContactData() async {
+    return await Provider.of<ContactUsProvider>(context, listen: false)
+        .fetchContactUs();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +42,7 @@ class ContactUs extends StatelessWidget {
       ),
       backgroundColor: theme.backgroundColor,
       body: FutureBuilder(
-          future: Provider.of<ContactUsProvider>(context, listen: false)
-              .fetchContactUs(),
+          future: contactdata,
           builder: (ctx, snapShot) {
             print(snapShot.connectionState);
             if (snapShot.connectionState == ConnectionState.waiting) {

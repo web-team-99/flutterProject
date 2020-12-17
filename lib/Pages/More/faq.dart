@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:test_url/AppBars/normalAppBar.dart';
 import 'package:test_url/Pages/customErrorWidget.dart';
 import 'package:test_url/Components/customIndicator.dart';
 import 'package:test_url/Components/MoreRoute/moreTextElement.dart';
@@ -9,8 +8,25 @@ import 'package:test_url/Styles/icons.dart';
 import 'package:test_url/providers/MorePageProviders/faqProvider.dart';
 import 'package:provider/provider.dart';
 
-class Faq extends StatelessWidget {
+class Faq extends StatefulWidget {
+  @override
+  _FAQState createState() => _FAQState();
+}
+
+class _FAQState extends State<Faq> {
   final _scrollController = ScrollController();
+  Future faqData;
+
+  @override
+  void initState() {
+    super.initState();
+    faqData = _getFAQData();
+  }
+
+  _getFAQData() async {
+    return await Provider.of<FaqProvider>(context, listen: false).fetchFaq();
+  }
+
   @override
   Widget build(BuildContext context) {
     double _width = MediaQuery.of(context).size.width;
@@ -25,7 +41,7 @@ class Faq extends StatelessWidget {
       ),
       backgroundColor: theme.backgroundColor,
       body: FutureBuilder(
-          future: Provider.of<FaqProvider>(context, listen: false).fetchFaq(),
+          future: faqData,
           builder: (ctx, snapShot) {
             print(snapShot.connectionState);
             if (snapShot.connectionState == ConnectionState.waiting) {

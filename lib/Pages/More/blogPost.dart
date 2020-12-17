@@ -1,7 +1,6 @@
 import 'package:clipboard/clipboard.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:test_url/AppBars/normalAppBar.dart';
 import 'package:test_url/Components/asyncImageLoader.dart';
 import 'package:test_url/Components/customToast.dart';
 import 'package:test_url/Pages/customErrorWidget.dart';
@@ -25,6 +24,7 @@ class BlogPost extends StatefulWidget {
 class _BlogPostState extends State<BlogPost> {
   FToast fToast;
   final _scrollController = ScrollController();
+  Future postData;
 
   final int _postId;
 
@@ -39,8 +39,14 @@ class _BlogPostState extends State<BlogPost> {
   @override
   void initState() {
     super.initState();
+    postData = _getPostData();
     fToast = FToast();
     fToast.init(context);
+  }
+
+  _getPostData() async {
+    return await Provider.of<BlogPostProvider>(context, listen: false)
+        .fetchBlogPost(_postId);
   }
 
   @override
@@ -57,8 +63,7 @@ class _BlogPostState extends State<BlogPost> {
         textTheme: theme.textTheme,
       ),
       body: FutureBuilder(
-          future: Provider.of<BlogPostProvider>(context, listen: false)
-              .fetchBlogPost(_postId),
+          future: postData,
           builder: (ctx, snapShot) {
             if (snapShot.connectionState == ConnectionState.waiting) {
               return CustomIndicator();

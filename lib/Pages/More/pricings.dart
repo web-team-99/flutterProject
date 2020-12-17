@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:test_url/AppBars/normalAppBar.dart';
 import 'package:test_url/Pages/customErrorWidget.dart';
 import 'package:test_url/Components/customIndicator.dart';
 import 'package:test_url/Components/MoreRoute/pricingsWidget.dart';
@@ -8,8 +7,25 @@ import 'package:test_url/Setting/strings.dart';
 import 'package:test_url/providers/MorePageProviders/pricingProvider.dart';
 import 'package:provider/provider.dart';
 
-class Pricings extends StatelessWidget {
+class Pricings extends StatefulWidget {
+  @override
+  _PricingsState createState() => _PricingsState();
+}
+
+class _PricingsState extends State<Pricings> {
   final _scrollController = ScrollController();
+  Future pricingsData;
+
+  @override
+  void initState() {
+    super.initState();
+    pricingsData = _getPricingsData();
+  }
+
+  _getPricingsData() async {
+    return await Provider.of<PricingProvider>(context, listen: false)
+        .fetchPricings();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +41,7 @@ class Pricings extends StatelessWidget {
       ),
       backgroundColor: theme.backgroundColor,
       body: FutureBuilder(
-        future: Provider.of<PricingProvider>(context, listen: false)
-            .fetchPricings(),
+        future: pricingsData,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting)
             return CustomIndicator();

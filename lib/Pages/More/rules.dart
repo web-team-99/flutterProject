@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:test_url/AppBars/normalAppBar.dart';
 import 'package:test_url/Pages/customErrorWidget.dart';
 import 'package:test_url/Components/customIndicator.dart';
 import 'package:test_url/Components/MoreRoute/moreTextElement.dart';
@@ -9,8 +8,24 @@ import 'package:test_url/Styles/icons.dart';
 import 'package:test_url/providers/MorePageProviders/rulesProvider.dart';
 import 'package:provider/provider.dart';
 
-class Rules extends StatelessWidget {
+class Rules extends StatefulWidget {
+  @override
+  _RulesState createState() => _RulesState();
+}
+
+class _RulesState extends State<Rules> {
   final _scrollController = ScrollController();
+  Future rulesData;
+
+  @override
+  void initState() {
+    super.initState();
+    rulesData = _getRulesData();
+  }
+
+  _getRulesData() async {
+    return await Provider.of<RuleProvider>(context, listen: false).fetchRules();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +41,7 @@ class Rules extends StatelessWidget {
       ),
       backgroundColor: theme.backgroundColor,
       body: FutureBuilder(
-          future:
-              Provider.of<RuleProvider>(context, listen: false).fetchRules(),
+          future: rulesData,
           builder: (ctx, snapShot) {
             if (snapShot.connectionState == ConnectionState.waiting) {
               return CustomIndicator();

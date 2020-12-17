@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:test_url/AppBars/normalAppBar.dart';
 import 'package:test_url/Components/MoreRoute/manualWidget.dart';
 import 'package:test_url/Setting/numbers.dart';
 import 'package:test_url/Setting/strings.dart';
@@ -8,8 +7,25 @@ import '../customErrorWidget.dart';
 import '../../Components/customIndicator.dart';
 import '../../providers/MorePageProviders/manualProvider.dart';
 
-class Manual extends StatelessWidget {
+class Manual extends StatefulWidget {
+  @override
+  _ManualState createState() => _ManualState();
+}
+
+class _ManualState extends State<Manual> {
   final _scrollController = ScrollController();
+  Future manData;
+
+  @override
+  void initState() {
+    super.initState();
+    manData = _getManData();
+  }
+
+  _getManData() async {
+    return await Provider.of<ManualProvider>(context, listen: false)
+        .fetchManual();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +41,7 @@ class Manual extends StatelessWidget {
       ),
       backgroundColor: theme.backgroundColor,
       body: FutureBuilder(
-          future:
-              Provider.of<ManualProvider>(context, listen: false).fetchManual(),
+          future: manData,
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return CustomIndicator();

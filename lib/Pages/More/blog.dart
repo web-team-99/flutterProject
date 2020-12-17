@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
-import 'package:test_url/AppBars/normalAppBar.dart';
 import 'package:test_url/Components/CustomRaisedButton.dart';
 import 'package:test_url/Components/MoreRoute/blogPostElement.dart';
 import 'package:test_url/Pages/customErrorWidget.dart';
@@ -25,10 +24,16 @@ class Blog extends StatefulWidget {
 
 class _BlogState extends State<Blog> {
   final _scrollController = ScrollController();
+  Future blogData;
+
+  _getBlogData() async {
+    return await Provider.of<BlogProvider>(context, listen: false).fetchBlog();
+  }
 
   @override
   void initState() {
     super.initState();
+    blogData = _getBlogData();
     if (widget.postId != null) {
       WidgetsBinding.instance
           .addPostFrameCallback((_) => pushNewScreenWithRouteSettings(
@@ -53,7 +58,7 @@ class _BlogState extends State<Blog> {
       ),
       backgroundColor: theme.backgroundColor,
       body: FutureBuilder(
-          future: Provider.of<BlogProvider>(context, listen: false).fetchBlog(),
+          future: blogData,
           builder: (ctx, snapShot) {
             if (snapShot.connectionState == ConnectionState.waiting) {
               return CustomIndicator();
