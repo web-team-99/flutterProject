@@ -39,7 +39,7 @@ class CustomToast extends StatelessWidget {
             SizedBox(
               width: 12.0,
             ),
-            Text(
+            SelectableText(
               text,
               textDirection: TextDirection.rtl,
               style: Theme.of(context).textTheme.bodyText2,
