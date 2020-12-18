@@ -22,8 +22,8 @@ class ProjectAndServiceSuggest extends StatelessWidget {
     return InkWell(
       child: Card(
         child: Container(
-          width: 180,
-          height: 120,
+          width: 240,
+          height: 160,
           padding: EdgeInsets.all(10),
           child: ClipRRect(
             borderRadius: BorderRadius.all(
@@ -34,9 +34,7 @@ class ProjectAndServiceSuggest extends StatelessWidget {
                 AspectRatio(
                   aspectRatio: 1.5,
                   child: Container(
-                    // height: _width / 4,
                     width: double.infinity,
-
                     child: AsyncImageLoader(imageUrl),
                   ),
                 ),
@@ -86,12 +84,3 @@ class ProjectAndServiceSuggest extends StatelessWidget {
     );
   }
 }
-
-// _imageLoader(String imageUrl) {
-//   CachedNetworkImage(
-//     imageUrl: imageUrl,
-//     placeholder: (context, url) => CustomIndicator(),
-//     errorWidget: (context, url, error) => Icon(Icons.error),
-//     fit: BoxFit.cover,
-//   );
-// }

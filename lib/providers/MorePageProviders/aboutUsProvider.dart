@@ -11,8 +11,6 @@ class AboutUsProvider with ChangeNotifier {
   List<Map<String, String>> _aboutUs;
 
   List<Map<String, String>> get aboutUs {
-    print(_aboutUs.length);
-    print(aboutUsApiUrl);
     return [..._aboutUs];
   }
 
@@ -24,8 +22,7 @@ class AboutUsProvider with ChangeNotifier {
       if (response.statusCode >= 400) {
         throw HttpException('Bad Connection');
       }
-      print(url);
-      print('helo');
+
       final responseData =
           json.decode(utf8.decode(response.bodyBytes)) as List<dynamic>;
       if (responseData == null) return;

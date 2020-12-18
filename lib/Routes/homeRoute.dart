@@ -10,24 +10,8 @@ import 'package:test_url/Setting/numbers.dart';
 import 'package:test_url/Setting/strings.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 
-class HomeRoute extends StatefulWidget {
-  @override
-  _HomeRouteState createState() => _HomeRouteState();
-}
-
-class _HomeRouteState extends State<HomeRoute> {
+class HomeRoute extends StatelessWidget {
   final _scrollController = ScrollController();
-  int _state = 0;
-
-  changeState() {
-    setState(() {
-      if (_state == 0) {
-        _state = 1;
-      } else {
-        _state = 0;
-      }
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -108,11 +92,11 @@ class _HomeRouteState extends State<HomeRoute> {
                   ),
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 20.0),
-                    height: 135,
+                    height: 175,
                     child: ListView.builder(
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
-                      itemCount: 15,
+                      itemCount: 5,
                       itemBuilder: (BuildContext context, int index) =>
                           ProjectAndServiceSuggest(
                         'http://138.201.6.240:8001/media/blog_photos/increase-virgool.jpg',
@@ -129,11 +113,11 @@ class _HomeRouteState extends State<HomeRoute> {
                   ),
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 20.0),
-                    height: 135,
+                    height: 175,
                     child: ListView.builder(
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
-                      itemCount: 15,
+                      itemCount: 5,
                       itemBuilder: (BuildContext context, int index) =>
                           ProjectAndServiceSuggest(
                         'http://138.201.6.240:8001/media/blog_photos/omid4.jpg',

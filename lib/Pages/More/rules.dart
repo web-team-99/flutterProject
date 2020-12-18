@@ -47,7 +47,6 @@ class _RulesState extends State<Rules> {
               return CustomIndicator();
             } else {
               if (snapShot.hasError) {
-                print('no data');
                 return CustomErrorWidget();
               } else {
                 return Scrollbar(

@@ -9,6 +9,7 @@ import 'package:test_url/Routes/messagesRoute.dart';
 import 'package:test_url/Routes/moreRoute.dart';
 import 'package:test_url/Routes/profileRoute.dart';
 import 'package:test_url/Routes/searchRoute.dart';
+import 'package:test_url/Setting/numbers.dart';
 import 'package:test_url/Setting/strings.dart';
 import 'package:test_url/Styles/icons.dart';
 import 'package:test_url/Styles/textStyles.dart';
@@ -80,38 +81,38 @@ class _MainScreenState extends State<MainScreen> {
     return [
       PersistentBottomNavBarItem(
         icon: Icon(homeIcon),
-        title: homePageTitle,
+        // title: homePageTitle,
         activeColor: theme.backgroundColor,
         inactiveColor: Colors.grey,
-        titleStyle: TextStyle(fontFamily: mainFontFamily),
+        // titleStyle: TextStyle(fontFamily: mainFontFamily),
       ),
       PersistentBottomNavBarItem(
         icon: Icon(messagesIcon),
-        title: (messagesPageTitle),
+        // title: (messagesPageTitle),
         activeColor: theme.backgroundColor,
         inactiveColor: Colors.grey,
-        titleStyle: TextStyle(fontFamily: mainFontFamily),
+        // titleStyle: TextStyle(fontFamily: mainFontFamily),
       ),
       PersistentBottomNavBarItem(
         icon: Icon(searchIcon),
-        title: (searchPageTitle),
+        // title: (searchPageTitle),
         activeColor: theme.backgroundColor,
         inactiveColor: Colors.grey,
-        titleStyle: TextStyle(fontFamily: mainFontFamily),
+        // titleStyle: TextStyle(fontFamily: mainFontFamily),
       ),
       PersistentBottomNavBarItem(
         icon: Icon(profileIcon),
-        title: (profilePageTitle),
+        // title: (profilePageTitle),
         activeColor: theme.backgroundColor,
         inactiveColor: Colors.grey,
-        titleStyle: TextStyle(fontFamily: mainFontFamily),
+        // titleStyle: TextStyle(fontFamily: mainFontFamily),
       ),
       PersistentBottomNavBarItem(
         icon: Icon(moreIcon),
-        title: (morePageTitle),
+        // title: (morePageTitle),
         activeColor: theme.backgroundColor,
         inactiveColor: Colors.grey,
-        titleStyle: TextStyle(fontFamily: mainFontFamily),
+        // titleStyle: TextStyle(fontFamily: mainFontFamily),
       ),
     ];
   }
@@ -132,16 +133,6 @@ class _MainScreenState extends State<MainScreen> {
       child: MaterialApp(
         theme: defaultTheme,
         home: Scaffold(
-          // drawer: Drawer(
-          //   child: Center(
-          //     child: Column(
-          //       mainAxisAlignment: MainAxisAlignment.center,
-          //       children: <Widget>[
-          //         const Text('This is the Drawer'),
-          //       ],
-          //     ),
-          //   ),
-          // ),
           body: PersistentTabView(
             controller: _controller,
             screens: _buildScreens(),
@@ -176,7 +167,7 @@ class _MainScreenState extends State<MainScreen> {
               duration: Duration(milliseconds: 400),
             ),
             items: _navBarsItems(),
-            navBarStyle: NavBarStyle.style9,
+            navBarStyle: NavBarStyle.style14,
           ),
         ),
       ),

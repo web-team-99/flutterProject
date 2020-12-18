@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
-import 'package:test_url/AppBars/normalAppBar.dart';
+
 import 'package:test_url/Components/MoreRoute/moreGridElement.dart';
 import 'package:test_url/Enums/moreOptionsEnum.dart';
 import 'package:test_url/Functions/moreFunctions.dart';
@@ -29,7 +29,6 @@ class _MoreRouteState extends State<MoreRoute> {
   @override
   void initState() {
     super.initState();
-    print(_blogPostId);
 
     if (_moreOption != null) {
       if (_moreOption == MoreOption.blog && _blogPostId != null) {

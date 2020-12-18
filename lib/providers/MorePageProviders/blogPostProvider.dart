@@ -20,21 +20,16 @@ class BlogPostProvider with ChangeNotifier {
 
   Future<void> fetchBlogPost(int id) async {
     _blogPost = [];
-    print("${id} this is idddddddddd");
     _isLoading = true;
-    print(id);
     final url = "$blogApiUrl/${id}";
-    print(url);
     try {
       final response = await http.get(url);
       _isLoading = false;
-      print(response.statusCode);
       if (response.statusCode >= 400) {
         throw HttpException('Bad Connection');
       }
       final responseData =
           json.decode(utf8.decode(response.bodyBytes)) as List<dynamic>;
-      print(responseData);
       if (responseData == null) return;
       responseData.forEach((element) {
         _blogPost.add({

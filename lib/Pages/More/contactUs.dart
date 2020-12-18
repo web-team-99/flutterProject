@@ -44,12 +44,10 @@ class _ContactUsState extends State<ContactUs> {
       body: FutureBuilder(
           future: contactdata,
           builder: (ctx, snapShot) {
-            print(snapShot.connectionState);
             if (snapShot.connectionState == ConnectionState.waiting) {
               return CustomIndicator();
             } else {
               if (snapShot.hasError) {
-                print('no data');
                 return CustomErrorWidget();
               } else {
                 return Scrollbar(

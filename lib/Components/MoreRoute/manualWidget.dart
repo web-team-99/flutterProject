@@ -12,7 +12,6 @@ class ManualWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(manualModel.entries[0].imageUrl);
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Container(
