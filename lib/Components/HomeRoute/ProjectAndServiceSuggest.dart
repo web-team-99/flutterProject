@@ -23,8 +23,8 @@ class ProjectAndServiceSuggest extends StatelessWidget {
     return InkWell(
       child: Card(
         child: Container(
-          width: _mobileView ? 150 : 240,
-          height: _mobileView ? 100 : 160,
+          width: 240,
+          height: 160,
           padding: EdgeInsets.all(10),
           child: ClipRRect(
             borderRadius: BorderRadius.all(

@@ -108,9 +108,7 @@ class _HomeRouteState extends State<HomeRoute> {
                   ),
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 20.0),
-                    height: _mobileView
-                        ? (100 + 15) as double
-                        : (160 + 15) as double,
+                    height: 175,
                     // width: _width / 7,
                     child: ListView.builder(
                       shrinkWrap: true,
@@ -132,9 +130,7 @@ class _HomeRouteState extends State<HomeRoute> {
                   ),
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 20.0),
-                    height: _mobileView
-                        ? (100 + 15) as double
-                        : (160 + 15) as double,
+                    height: 175,
                     child: ListView.builder(
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
