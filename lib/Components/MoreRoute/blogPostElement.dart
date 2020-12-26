@@ -4,7 +4,7 @@ import 'package:test_url/Components/CustomRaisedButton.dart';
 import 'package:test_url/Components/asyncImageLoader.dart';
 import 'package:test_url/Pages/More/blogPost.dart';
 import 'package:test_url/Setting/numbers.dart';
-import 'package:test_url/Styles/textStyles.dart';
+import 'package:test_url/Setting/strings.dart';
 
 class BlogPostElement extends StatelessWidget {
   final int _postId;
@@ -23,10 +23,10 @@ class BlogPostElement extends StatelessWidget {
     ThemeData theme = Theme.of(context);
 
     return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       elevation: 3,
       color: Colors.white,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AspectRatio(
             aspectRatio: 1.5,
@@ -44,40 +44,38 @@ class BlogPostElement extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Text(
-                          _time,
-                          textDirection: TextDirection.rtl,
-                          style: theme.textTheme.subtitle1,
-                        ),
                         Container(
-                          margin: EdgeInsets.only(left: 10),
+                          margin: EdgeInsets.only(right: 10),
                           child: Icon(
-                            Icons.access_time,
+                            Icons.calendar_today,
                           ),
+                        ),
+                        Text(
+                          _date,
+                          style: theme.textTheme.subtitle1,
                         ),
                       ],
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Text(
-                          _date,
-                          textDirection: TextDirection.rtl,
-                          style: theme.textTheme.subtitle1,
-                        ),
                         Container(
-                          margin: EdgeInsets.only(left: 10),
+                          margin: EdgeInsets.only(right: 10),
                           child: Icon(
-                            Icons.calendar_today,
+                            Icons.access_time,
                           ),
+                        ),
+                        Text(
+                          _time,
+                          style: theme.textTheme.subtitle1,
                         ),
                       ],
                     ),
@@ -85,45 +83,17 @@ class BlogPostElement extends StatelessWidget {
                 ),
                 Padding(
                   padding:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                   child: SelectableText(
                     _title,
-                    textDirection: TextDirection.rtl,
-                    style: TextStyle(
-                      fontFamily: mainFontFamily,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                    ),
+                    style: theme.textTheme.headline5,
                   ),
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    // InkWell(
-                    //   child: Card(
-                    //     shape: RoundedRectangleBorder(
-                    //       side: BorderSide(color: Colors.black, width: 2),
-                    //       borderRadius: BorderRadius.circular(5),
-                    //     ),
-                    //     color: themeColor,
-                    //     child: Container(
-                    //         margin: EdgeInsets.all(10),
-                    //         child: Text(
-                    //           'ادامه مطلب',
-                    //           textDirection: TextDirection.rtl,
-                    //           style: TextStyle(fontFamily: mainFontFamily),
-                    //         )),
-                    //   ),
-                    //   onTap: () => {
-                    //     pushNewScreenWithRouteSettings(
-                    //       context,
-                    //       settings: null,
-                    //       screen: BlogPost(_postId),
-                    //       pageTransitionAnimation: PageTransitionAnimation.fade,
-                    //     ),
-                    //   },
-                    // ),
                     CustomRaisedButton(
+                      title: blogReadMore,
                       onPressed: () => {
                         pushNewScreenWithRouteSettings(
                           context,
@@ -132,8 +102,6 @@ class BlogPostElement extends StatelessWidget {
                           pageTransitionAnimation: PageTransitionAnimation.fade,
                         )
                       },
-                      title: 'ادامه مطلب',
-                      isDisabled: false,
                     ),
                   ],
                 )

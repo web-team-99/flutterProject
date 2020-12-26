@@ -25,6 +25,7 @@ class Blog extends StatefulWidget {
 class _BlogState extends State<Blog> {
   final _scrollController = ScrollController();
   Future blogData;
+  final int postPerPage = 5;
 
   _getBlogData() async {
     return await Provider.of<BlogProvider>(context, listen: false).fetchBlog();
@@ -81,11 +82,15 @@ class _BlogState extends State<Blog> {
                       child: Consumer<BlogProvider>(
                         builder: (ctx, data, child) => Column(
                           children: [
-                            ...((widget._pageIndex + 1) * 5 < data.blogs.length
-                                    ? data.blogs.sublist(widget._pageIndex * 5,
-                                            (widget._pageIndex + 1) * 5)
+                            ...((widget._pageIndex + 1) * postPerPage <
+                                        data.blogs.length
+                                    ? data.blogs.sublist(
+                                            widget._pageIndex * postPerPage,
+                                            (widget._pageIndex + 1) *
+                                                postPerPage)
                                         as List<Map<String, Object>>
-                                    : data.blogs.sublist(widget._pageIndex * 5,
+                                    : data.blogs.sublist(
+                                            widget._pageIndex * postPerPage,
                                             data.blogs.length)
                                         as List<Map<String, Object>>)
                                 .map((item) {
@@ -108,42 +113,40 @@ class _BlogState extends State<Blog> {
                                       pushNewScreenWithRouteSettings(
                                         context,
                                         settings: null,
-                                        screen: Blog(widget._pageIndex + 1),
+                                        screen: Blog(widget._pageIndex - 1),
                                         pageTransitionAnimation:
                                             PageTransitionAnimation.fade,
-                                      ),
+                                      )
                                     },
-                                    title: "صفحه بعد",
-                                    isDisabled: widget._pageIndex ==
-                                                (data.blogs.length / 5)
-                                                    .round() ||
-                                            (widget._pageIndex + 1) * 5 ==
-                                                data.blogs.length
-                                        ? true
-                                        : false,
+                                    title: blogPreviousPage,
+                                    isDisabled:
+                                        widget._pageIndex <= 0 ? true : false,
                                   ),
                                   Text(
-                                    'صفحه ' +
-                                        getPersianNumbers(
-                                            (widget._pageIndex + 1).toString()),
-                                    style: TextStyle(
-                                      fontFamily: mainFontFamily,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                    blogPages +
+                                        (widget._pageIndex + 1).toString(),
+                                    style: theme.textTheme.headline5,
                                   ),
                                   CustomRaisedButton(
                                     onPressed: () => {
                                       pushNewScreenWithRouteSettings(
                                         context,
                                         settings: null,
-                                        screen: Blog(widget._pageIndex - 1),
+                                        screen: Blog(widget._pageIndex + 1),
                                         pageTransitionAnimation:
                                             PageTransitionAnimation.fade,
-                                      )
+                                      ),
                                     },
-                                    title: "صفحه قبل",
-                                    isDisabled:
-                                        widget._pageIndex <= 0 ? true : false,
+                                    title: blogNextPage,
+                                    isDisabled: widget._pageIndex ==
+                                                (data.blogs.length /
+                                                        postPerPage)
+                                                    .round() ||
+                                            (widget._pageIndex + 1) *
+                                                    postPerPage ==
+                                                data.blogs.length
+                                        ? true
+                                        : false,
                                   ),
                                 ],
                               ),

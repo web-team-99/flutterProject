@@ -67,14 +67,11 @@ class _RulesState extends State<Rules> {
                             children: [
                               ...(data.rules as List<Map<String, Object>>)
                                   .map((item) {
-                                return Directionality(
-                                  textDirection: TextDirection.rtl,
-                                  child: MoreTextElement(
-                                    item,
-                                    'question',
-                                    'answer',
-                                    rulesIcon,
-                                  ),
+                                return MoreTextElement(
+                                  item,
+                                  'question',
+                                  'answer',
+                                  rulesIcon,
                                 );
                               }).toList(),
                             ],

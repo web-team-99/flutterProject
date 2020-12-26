@@ -63,11 +63,8 @@ class _PricingsState extends State<Pricings> {
                     children: [
                       ...data.pricings
                           .map(
-                            (e) => Directionality(
-                              textDirection: TextDirection.rtl,
-                              child: PricingsWidget(
-                                pricingModel: e,
-                              ),
+                            (e) => PricingsWidget(
+                              pricingModel: e,
                             ),
                           )
                           .toList(),

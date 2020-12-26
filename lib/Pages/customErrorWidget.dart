@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_url/Setting/numbers.dart';
+import 'package:test_url/Setting/strings.dart';
 
 class CustomErrorWidget extends StatelessWidget {
   final _scrollController = ScrollController();
@@ -32,22 +33,19 @@ class CustomErrorWidget extends StatelessWidget {
                   Icons.wifi_off,
                   size: _width / 7,
                 ),
-                SelectableText('مشکلی در اتصال به اینترنت پیش آمده است!',
-                    textDirection: TextDirection.rtl,
-                    style: theme.textTheme.headline2),
-                SelectableText(
-                    'لطفا از اتصال خود به اینترنت اطمینان حاصل کنید و دوباره امتحان کنید.',
-                    textDirection: TextDirection.rtl,
-                    style: theme.textTheme.headline5),
+                Text(networkErrorTitle, style: theme.textTheme.headline2),
+                Text(
+                  networkErrorDetails,
+                  style: theme.textTheme.headline5,
+                ),
                 Divider(
                   height: 10,
                   thickness: 3,
                 ),
                 RaisedButton(
                   child: Text(
-                    'بازگشت',
+                    networkErrorButtonString,
                     style: theme.textTheme.bodyText1,
-                    textDirection: TextDirection.rtl,
                   ),
                   onPressed: () => Navigator.of(context).pop(),
                 ),

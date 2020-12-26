@@ -26,14 +26,12 @@ class WebMobileHomeFooter extends StatelessWidget {
                 child: Image.asset('assets/logo.png'),
               ),
               Text(
-                'شرکت نام شرکت شما',
+                companyName,
                 style: theme.textTheme.bodyText1,
-                textDirection: TextDirection.rtl,
               ),
               Text(
-                'تمامی حقوق محفوظ است ©',
+                allRightsReserved,
                 style: theme.textTheme.bodyText1,
-                textDirection: TextDirection.rtl,
               ),
               Divider(
                 height: 30,
@@ -43,7 +41,6 @@ class WebMobileHomeFooter extends StatelessWidget {
                 child: Text(
                   aboutUsPageTitle,
                   style: theme.textTheme.bodyText1,
-                  textDirection: TextDirection.rtl,
                 ),
                 onPressed: () => _launchURL(aboutUsUrl),
               ),
@@ -51,7 +48,6 @@ class WebMobileHomeFooter extends StatelessWidget {
                 child: Text(
                   contactUsPageTitle,
                   style: theme.textTheme.bodyText1,
-                  textDirection: TextDirection.rtl,
                 ),
                 onPressed: () => _launchURL(contactUsUrl),
               ),
@@ -59,7 +55,6 @@ class WebMobileHomeFooter extends StatelessWidget {
                 child: Text(
                   pricingsPageTitle,
                   style: theme.textTheme.bodyText1,
-                  textDirection: TextDirection.rtl,
                 ),
                 onPressed: () => _launchURL(pricingsUrl),
               ),
@@ -67,7 +62,6 @@ class WebMobileHomeFooter extends StatelessWidget {
                 child: Text(
                   rulesPageTitle,
                   style: theme.textTheme.bodyText1,
-                  textDirection: TextDirection.rtl,
                 ),
                 onPressed: () => _launchURL(rulesUrl),
               ),
@@ -75,7 +69,6 @@ class WebMobileHomeFooter extends StatelessWidget {
                 child: Text(
                   faqPageTitle,
                   style: theme.textTheme.bodyText1,
-                  textDirection: TextDirection.rtl,
                 ),
                 onPressed: () => _launchURL(faqUrl),
               ),
@@ -83,7 +76,6 @@ class WebMobileHomeFooter extends StatelessWidget {
                 child: Text(
                   manualPageTitle,
                   style: theme.textTheme.bodyText1,
-                  textDirection: TextDirection.rtl,
                 ),
                 onPressed: () => _launchURL(manualUrl),
               ),
@@ -91,7 +83,6 @@ class WebMobileHomeFooter extends StatelessWidget {
                 child: Text(
                   blogPageTitle,
                   style: theme.textTheme.bodyText1,
-                  textDirection: TextDirection.rtl,
                 ),
                 onPressed: () => _launchURL(blogUrl),
               ),
@@ -99,7 +90,6 @@ class WebMobileHomeFooter extends StatelessWidget {
                 child: Text(
                   softwareTeamPageTitle,
                   style: theme.textTheme.bodyText1,
-                  textDirection: TextDirection.rtl,
                 ),
                 onPressed: () => _launchURL(softwareTeamUrl),
               ),

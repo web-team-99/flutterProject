@@ -1,8 +1,6 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:test_url/Components/asyncImageLoader.dart';
-import 'package:test_url/Components/customIndicator.dart';
-import 'package:test_url/Functions/moreFunctions.dart';
+import 'package:test_url/Setting/strings.dart';
 
 class ProjectAndServiceSuggest extends StatelessWidget {
   final String imageUrl;
@@ -64,12 +62,10 @@ class ProjectAndServiceSuggest extends StatelessWidget {
                     children: [
                       Text(
                         title,
-                        textDirection: TextDirection.rtl,
                         style: theme.textTheme.bodyText1,
                       ),
                       Text(
-                        getPersianNumbers(price.toString()) + ' تومان',
-                        textDirection: TextDirection.rtl,
+                        price.toString() + priceDollarString,
                         style: theme.textTheme.bodyText1,
                       )
                     ],

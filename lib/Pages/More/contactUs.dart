@@ -67,14 +67,12 @@ class _ContactUsState extends State<ContactUs> {
                           children: [
                             ...(data.contactUs as List<Map<String, Object>>)
                                 .map((item) {
-                              return Directionality(
-                                  textDirection: TextDirection.rtl,
-                                  child: MoreTextElement(
-                                    item,
-                                    'question',
-                                    'answer',
-                                    contactUsIcon,
-                                  ));
+                              return MoreTextElement(
+                                item,
+                                'question',
+                                'answer',
+                                contactUsIcon,
+                              );
                             }).toList(),
                           ],
                         ),

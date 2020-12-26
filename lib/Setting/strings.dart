@@ -1,28 +1,50 @@
-String homePageTitle = 'خانه';
-String messagesPageTitle = 'پیام‌ها';
-String searchPageTitle = 'جستجو';
-String profilePageTitle = 'پروفایل';
-String morePageTitle = 'بیشتر';
-String aboutUsPageTitle = 'درباره ما';
-String contactUsPageTitle = 'تماس با ما';
-String rulesPageTitle = 'قوانین و مقررات';
-String manualPageTitle = 'راهنمای سایت';
-String pricingsPageTitle = 'تعرفه‌ها';
-String faqPageTitle = 'سوالات متداول';
-String blogPageTitle = 'وبلاگ';
-String softwareTeamPageTitle = 'تیم توسعه';
+//pages title
+String homePageTitle = 'Freelancer';
+String messagesPageTitle = 'messages';
+String searchPageTitle = 'search';
+String profilePageTitle = 'profile';
+String morePageTitle = 'more';
+String aboutUsPageTitle = 'about us';
+String contactUsPageTitle = 'contact us';
+String rulesPageTitle = 'rules';
+String manualPageTitle = 'manual';
+String pricingsPageTitle = 'prices';
+String faqPageTitle = 'faq';
+String blogPageTitle = 'blog';
+String softwareTeamPageTitle = 'developers';
 String templatePageTitle = '//template//';
-String blogPostPageTitle = 'پست';
+String blogPostPageTitle = 'post';
 
-String homePageAppBarTitle = 'فریلنسر';
-String homePageAppBarInstallApp = 'نصب برنامه';
-String homePageAppBarPricings = 'تعرفه‌ها';
+//home strings
+String homePageAppBarInstallApp = 'Install app';
+String projectsHeader = 'Projects';
+String servicesHeader = 'Services';
+String priceDollarString = ' \$';
+String companyName = 'company name';
+String allRightsReserved = 'All rights reserved ©';
+String moreProjectsAndServices = "more";
 
 String homeFirstStringTitle =
-    'به دنبال یافتن کمک در خارج از کشور هستید؟ پروژه‌تان را با خیال راحت به دیگری بسپارید.';
+    'Looking for help abroad? Leave your project safely to someone else.';
 String homeFirstStringDescription =
-    "کارهایی که نیاز دارید در خارج از کشور انجام دهید را جستجو کنید و به کسی بسپارید که برایتان انجام دهد. اگر در کاری نیاز به کمک دارید و انجام دهنده آن را پیدا نمی‌کنید، پروژه خود را تعریف کنید تا کسی برایتان انجام دهد.";
+    'Seek out what you need to do abroad and leave it to someone to do it for you. If you need help with something and you can\'t find one, define your project so that someone can do it for you.';
 String homeSecondStringTitle =
-    'خارج از کشور هستید و می‌توانید پروژه‌ای انجام دهید؟ درآمد کسب کنید.';
+    'Are you abroad and can you do a project? Make money.';
 String homeSecondStringDescription =
-    "اگر خارج از کشور هستید و می‌توانید کاری انجام دهید، کارهایی که می‌توانید انجام دهید را جستجو کنید و متناسب با قیمت پیشنهادی، مسئولیت یک کار را قبول کنید. اگر کار مورد نظر خود را پیدا نمی‌کنید، آن را بسازید تا کسی به شما سفارش دهد.";
+    'If you are abroad and can do something, look for things you can do and take responsibility for a job at a reasonable price. If you do not find what you are looking for then just ask.';
+
+//more strings
+String payButtonString = 'pay';
+String payDollarString = ' \$';
+String blogReadMore = 'Read more';
+String blogPages = 'Page ';
+String blogNextPage = 'Next';
+String blogPreviousPage = 'Previous';
+String blogPostShare = 'Share';
+String blogPostLinkCopied = 'Link copied in clipboard.';
+
+//network error page strings
+String networkErrorTitle = 'Problems in internet connection!';
+String networkErrorDetails =
+    'Please check your internet connection and try again.';
+String networkErrorButtonString = 'back';

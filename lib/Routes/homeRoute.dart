@@ -10,7 +10,12 @@ import 'package:test_url/Setting/numbers.dart';
 import 'package:test_url/Setting/strings.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 
-class HomeRoute extends StatelessWidget {
+class HomeRoute extends StatefulWidget {
+  @override
+  _HomeRouteState createState() => _HomeRouteState();
+}
+
+class _HomeRouteState extends State<HomeRoute> {
   final _scrollController = ScrollController();
 
   @override
@@ -33,12 +38,12 @@ class HomeRoute extends StatelessWidget {
                     ),
                   )
                 ],
-                title: Text(homePageAppBarTitle),
+                title: Text(homePageTitle),
                 centerTitle: true,
                 textTheme: theme.textTheme,
               )
             : AppBar(
-                title: Text(homePageAppBarTitle),
+                title: Text(homePageTitle),
                 centerTitle: true,
                 textTheme: theme.textTheme,
               ),
@@ -85,7 +90,7 @@ class HomeRoute extends StatelessWidget {
                             )
                       : SizedBox.shrink(),
                   HomeListHeader(
-                    'پروژه‌ها',
+                    projectsHeader,
                     () => {
                       //TODO
                     },
@@ -100,13 +105,13 @@ class HomeRoute extends StatelessWidget {
                       itemBuilder: (BuildContext context, int index) =>
                           ProjectAndServiceSuggest(
                         'http://138.201.6.240:8001/media/blog_photos/increase-virgool.jpg',
-                        30000,
-                        'نمونه پروژه',
+                        30,
+                        'sample project',
                       ),
                     ),
                   ),
                   HomeListHeader(
-                    'سرویس‌ها',
+                    servicesHeader,
                     () => {
                       //TODO
                     },
@@ -121,8 +126,8 @@ class HomeRoute extends StatelessWidget {
                       itemBuilder: (BuildContext context, int index) =>
                           ProjectAndServiceSuggest(
                         'http://138.201.6.240:8001/media/blog_photos/omid4.jpg',
-                        10000,
-                        'نمونه سرویس',
+                        100,
+                        'sample service',
                       ),
                     ),
                   ),

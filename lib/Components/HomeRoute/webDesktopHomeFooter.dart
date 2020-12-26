@@ -25,14 +25,12 @@ class WebDesktopHomeFooter extends StatelessWidget {
                 child: Image.asset('assets/logo.png'),
               ),
               Text(
-                'شرکت نام شرکت شما',
+                companyName,
                 style: theme.textTheme.bodyText1,
-                textDirection: TextDirection.rtl,
               ),
               Text(
-                'تمامی حقوق محفوظ است ©',
+                allRightsReserved,
                 style: theme.textTheme.bodyText1,
-                textDirection: TextDirection.rtl,
               )
             ],
           ),
@@ -43,7 +41,6 @@ class WebDesktopHomeFooter extends StatelessWidget {
                 child: Text(
                   faqPageTitle,
                   style: theme.textTheme.bodyText1,
-                  textDirection: TextDirection.rtl,
                 ),
                 onPressed: () => _launchURL(faqUrl),
               ),
@@ -51,7 +48,6 @@ class WebDesktopHomeFooter extends StatelessWidget {
                 child: Text(
                   manualPageTitle,
                   style: theme.textTheme.bodyText1,
-                  textDirection: TextDirection.rtl,
                 ),
                 onPressed: () => _launchURL(manualUrl),
               ),
@@ -59,7 +55,6 @@ class WebDesktopHomeFooter extends StatelessWidget {
                 child: Text(
                   blogPageTitle,
                   style: theme.textTheme.bodyText1,
-                  textDirection: TextDirection.rtl,
                 ),
                 onPressed: () => _launchURL(blogUrl),
               ),
@@ -67,7 +62,6 @@ class WebDesktopHomeFooter extends StatelessWidget {
                 child: Text(
                   softwareTeamPageTitle,
                   style: theme.textTheme.bodyText1,
-                  textDirection: TextDirection.rtl,
                 ),
                 onPressed: () => _launchURL(softwareTeamUrl),
               ),
@@ -80,7 +74,6 @@ class WebDesktopHomeFooter extends StatelessWidget {
                 child: Text(
                   aboutUsPageTitle,
                   style: theme.textTheme.bodyText1,
-                  textDirection: TextDirection.rtl,
                 ),
                 onPressed: () => _launchURL(aboutUsUrl),
               ),
@@ -88,7 +81,6 @@ class WebDesktopHomeFooter extends StatelessWidget {
                 child: Text(
                   contactUsPageTitle,
                   style: theme.textTheme.bodyText1,
-                  textDirection: TextDirection.rtl,
                 ),
                 onPressed: () => _launchURL(contactUsUrl),
               ),
@@ -96,7 +88,6 @@ class WebDesktopHomeFooter extends StatelessWidget {
                 child: Text(
                   pricingsPageTitle,
                   style: theme.textTheme.bodyText1,
-                  textDirection: TextDirection.rtl,
                 ),
                 onPressed: () => _launchURL(pricingsUrl),
               ),
@@ -104,7 +95,6 @@ class WebDesktopHomeFooter extends StatelessWidget {
                 child: Text(
                   rulesPageTitle,
                   style: theme.textTheme.bodyText1,
-                  textDirection: TextDirection.rtl,
                 ),
                 onPressed: () => _launchURL(rulesUrl),
               ),

@@ -66,14 +66,11 @@ class _FAQState extends State<Faq> {
                           children: [
                             ...(data.faq as List<Map<String, Object>>)
                                 .map((item) {
-                              return Directionality(
-                                textDirection: TextDirection.rtl,
-                                child: MoreTextElement(
-                                  item,
-                                  'question',
-                                  'answer',
-                                  faqIcon,
-                                ),
+                              return MoreTextElement(
+                                item,
+                                'question',
+                                'answer',
+                                faqIcon,
                               );
                             }).toList(),
                           ],

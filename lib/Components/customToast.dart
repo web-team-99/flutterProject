@@ -35,15 +35,14 @@ class CustomToast extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(iconData),
+            Text(
+              text,
+              style: Theme.of(context).textTheme.bodyText2,
+            ),
             SizedBox(
               width: 12.0,
             ),
-            SelectableText(
-              text,
-              textDirection: TextDirection.rtl,
-              style: Theme.of(context).textTheme.bodyText2,
-            ),
+            Icon(iconData),
           ],
         ),
       ),

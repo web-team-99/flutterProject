@@ -53,12 +53,12 @@ class _MessagesRouteState extends State<MessagesRoute> {
               children: [
                 Text(
                   'messages state: ' + _state.toString(),
-                  style: normalText,
+                  style: theme.textTheme.bodyText2,
                 ),
                 RaisedButton(
                   child: Text(
                     'change state',
-                    style: normalText,
+                    style: theme.textTheme.bodyText1,
                   ),
                   onPressed: () => changeState(),
                 ),

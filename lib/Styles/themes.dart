@@ -49,12 +49,12 @@ ThemeData defaultTheme = ThemeData(
       fontFamily: mainFontFamily,
     ),
     headline6: TextStyle(
-        fontSize: 16,
+        fontSize: 18,
         color: Colors.white,
         fontFamily: mainFontFamily,
         fontWeight: FontWeight.bold),
     headline5: TextStyle(
-      fontSize: 16,
+      fontSize: 18,
       color: Colors.black,
       fontFamily: mainFontFamily,
       fontWeight: FontWeight.bold,

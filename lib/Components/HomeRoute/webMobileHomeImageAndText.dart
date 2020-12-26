@@ -16,13 +16,6 @@ class WebMobileHomeImageAndText extends StatelessWidget {
 
     return Container(
         padding: EdgeInsets.all(20),
-        // child: Row(
-        //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-        //   children: [
-        // Container(
-        //   width: _width / 3,
-        //   child: Image.asset(imageAddress),
-        // ),
         child: Container(
           width: _width * 2 / 3,
           child: Column(
@@ -30,7 +23,6 @@ class WebMobileHomeImageAndText extends StatelessWidget {
               SelectableText(
                 title,
                 style: theme.textTheme.headline2,
-                textDirection: TextDirection.rtl,
               ),
               Divider(
                 height: 10,
@@ -38,7 +30,6 @@ class WebMobileHomeImageAndText extends StatelessWidget {
               ),
               SelectableText(
                 description,
-                textDirection: TextDirection.rtl,
                 style: theme.textTheme.headline5,
               ),
               Divider(

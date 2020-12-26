@@ -1,7 +1,5 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:test_url/Components/asyncImageLoader.dart';
-import 'package:test_url/Components/customIndicator.dart';
 import '../../models/ProviderModels/manualModel.dart';
 import 'CustomExpansionTile.dart';
 
@@ -12,21 +10,16 @@ class ManualWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: Container(
-        // decoration: BoxDecoration(border: Border.all(width: 1)),
-        padding: const EdgeInsets.all(2.0),
-        child: CustomExpansionTile(
-          backgroundColor: Theme.of(context).cardColor,
-          childrenPadding: EdgeInsets.all(16),
-          title: Text(
-            manualModel.title,
-          ),
-          children: [
-            ...manualModel.entries.map((e) => _ManualEntry(e)).toList()
-          ],
+    return Container(
+      // decoration: BoxDecoration(border: Border.all(width: 1)),
+      padding: const EdgeInsets.all(2.0),
+      child: CustomExpansionTile(
+        backgroundColor: Theme.of(context).cardColor,
+        childrenPadding: EdgeInsets.all(16),
+        title: Text(
+          manualModel.title,
         ),
+        children: [...manualModel.entries.map((e) => _ManualEntry(e)).toList()],
       ),
     );
   }
@@ -86,11 +79,6 @@ class _ManualEntry extends StatelessWidget {
               ),
             ),
           ),
-        // ClipRRect(
-        //   borderRadius: BorderRadius.circular(10.0),
-        //   // child: Image.network(manualEntry.imageUrl),
-        //   child: AsyncImageLoader(manualEntry.imageUrl),
-        // ),
         Divider(),
       ],
     );

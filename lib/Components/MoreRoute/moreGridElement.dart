@@ -35,7 +35,6 @@ class GridElement extends StatelessWidget {
               flex: 1,
               child: Text(
                 getText(_moreOption),
-                textDirection: TextDirection.rtl,
                 style: _mobileView
                     ? theme.textTheme.bodyText1
                     : _width < 800

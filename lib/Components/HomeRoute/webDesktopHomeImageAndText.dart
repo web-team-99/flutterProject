@@ -21,16 +21,11 @@ class WebDesktopHomeImageAndText extends StatelessWidget {
         children: [
           Container(
             width: _width / 3,
-            child: Image.asset(imageAddress),
-          ),
-          Container(
-            width: _width / 3,
             child: Column(
               children: [
                 SelectableText(
                   title,
                   style: theme.textTheme.headline2,
-                  textDirection: TextDirection.rtl,
                 ),
                 Divider(
                   height: 10,
@@ -38,12 +33,15 @@ class WebDesktopHomeImageAndText extends StatelessWidget {
                 ),
                 SelectableText(
                   description,
-                  textDirection: TextDirection.rtl,
                   style: theme.textTheme.headline5,
                 )
               ],
             ),
-          )
+          ),
+          Container(
+            width: _width / 3,
+            child: Image.asset(imageAddress),
+          ),
         ],
       ),
     );

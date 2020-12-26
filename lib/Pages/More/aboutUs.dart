@@ -65,14 +65,12 @@ class _AboutUsState extends State<AboutUs> {
                     return Column(
                       children: [
                         ...(d.aboutUs as List<Map<String, Object>>).map((item) {
-                          return Directionality(
-                              textDirection: TextDirection.rtl,
-                              child: MoreTextElement(
-                                item,
-                                'question',
-                                'answer',
-                                aboutUsIcon,
-                              ));
+                          return MoreTextElement(
+                            item,
+                            'question',
+                            'answer',
+                            aboutUsIcon,
+                          );
                         }).toList(),
                       ],
                     );

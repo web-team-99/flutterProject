@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_url/Functions/moreFunctions.dart';
+import 'package:test_url/Setting/strings.dart';
 import 'package:test_url/models/ProviderModels/pricingsModel.dart';
 
 class PricingsWidget extends StatelessWidget {
@@ -55,24 +56,18 @@ class PricingsWidget extends StatelessWidget {
                   thickness: 3,
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Row(
-                      children: [
-                        SelectableText(
-                          getPersianNumbers(pricingModel.price.toString()) +
-                              ' تومان',
-                          style: theme.textTheme.bodyText1,
-                        ),
-                        // Text(
-                        //   " تومان",
-                        //   style: theme.textTheme.bodyText1,
-                        // ),
-                      ],
+                    Container(
+                      margin: EdgeInsets.all(10),
+                      child: SelectableText(
+                        pricingModel.price.toString() + payDollarString,
+                        style: theme.textTheme.bodyText1,
+                      ),
                     ),
                     RaisedButton(
                       child: Text(
-                        "پرداخت",
+                        payButtonString,
                         style: theme.textTheme.bodyText1,
                       ),
                       onPressed: () => {
@@ -85,9 +80,6 @@ class PricingsWidget extends StatelessWidget {
             ),
           ),
         ),
-        // Divider(
-        //   height: 10,
-        // )
       ],
     );
   }

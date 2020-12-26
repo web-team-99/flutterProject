@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_url/Setting/strings.dart';
 
 class HomeListHeader extends StatelessWidget {
   final String title;
@@ -15,28 +16,26 @@ class HomeListHeader extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            RaisedButton(
-              child: Center(
-                  child: Row(
-                children: [
-                  Container(
-                    margin: EdgeInsets.all(5),
-                    child: Icon(Icons.arrow_back_ios),
-                  ),
-                  Text(
-                    'بیشتر',
-                    style: theme.textTheme.bodyText1,
-                    textDirection: TextDirection.rtl,
-                  )
-                ],
-              )),
-              onPressed: buttonFunction,
-            ),
             Text(
               title,
-              textDirection: TextDirection.rtl,
               style: theme.textTheme.headline5,
-            )
+            ),
+            RaisedButton(
+              child: Center(
+                child: Row(
+                  children: [
+                    Text(
+                      moreProjectsAndServices,
+                      style: theme.textTheme.bodyText1,
+                    ),
+                    Container(
+                        margin: EdgeInsets.all(5),
+                        child: Icon(Icons.read_more)),
+                  ],
+                ),
+              ),
+              onPressed: buttonFunction,
+            ),
           ],
         ),
         Divider(
