@@ -8,6 +8,7 @@ import 'package:test_url/Functions/moreFunctions.dart';
 import 'package:test_url/Pages/More/blogPost.dart';
 import 'package:test_url/Setting/numbers.dart';
 import 'package:test_url/Setting/strings.dart';
+import 'package:test_url/Styles/animations.dart';
 import 'package:test_url/Styles/textStyles.dart';
 import 'package:test_url/providers/MorePageProviders/blogProvider.dart';
 import 'package:provider/provider.dart';
@@ -36,12 +37,14 @@ class _BlogState extends State<Blog> {
     super.initState();
     blogData = _getBlogData();
     if (widget.postId != null) {
-      WidgetsBinding.instance
-          .addPostFrameCallback((_) => pushNewScreenWithRouteSettings(
-                context,
-                settings: null,
-                screen: BlogPost(widget.postId),
-              ));
+      WidgetsBinding.instance.addPostFrameCallback(
+        (_) => pushNewScreenWithRouteSettings(
+          context,
+          settings: null,
+          screen: BlogPost(widget.postId),
+          pageTransitionAnimation: changePageAnimation,
+        ),
+      );
     }
   }
 
@@ -115,7 +118,7 @@ class _BlogState extends State<Blog> {
                                         settings: null,
                                         screen: Blog(widget._pageIndex - 1),
                                         pageTransitionAnimation:
-                                            PageTransitionAnimation.fade,
+                                            changePageAnimation,
                                       )
                                     },
                                     title: blogPreviousPage,
@@ -134,7 +137,7 @@ class _BlogState extends State<Blog> {
                                         settings: null,
                                         screen: Blog(widget._pageIndex + 1),
                                         pageTransitionAnimation:
-                                            PageTransitionAnimation.fade,
+                                            changePageAnimation,
                                       ),
                                     },
                                     title: blogNextPage,

@@ -9,6 +9,7 @@ import 'package:test_url/Functions/moreFunctions.dart';
 import 'package:test_url/Setting/numbers.dart';
 import 'package:test_url/Setting/serverUrl.dart';
 import 'package:test_url/Setting/strings.dart';
+import 'package:test_url/Styles/icons.dart';
 import 'package:test_url/providers/MorePageProviders/blogPostProvider.dart';
 import 'package:provider/provider.dart';
 
@@ -124,7 +125,7 @@ class _BlogPostState extends State<BlogPost> {
                                               margin:
                                                   EdgeInsets.only(right: 10),
                                               child: Icon(
-                                                Icons.calendar_today,
+                                                blogDateIcon,
                                               ),
                                             ),
                                             Text(
@@ -141,7 +142,7 @@ class _BlogPostState extends State<BlogPost> {
                                               margin:
                                                   EdgeInsets.only(right: 10),
                                               child: Icon(
-                                                Icons.access_time,
+                                                blogTimeIcon,
                                               ),
                                             ),
                                             Text(
@@ -183,8 +184,9 @@ class _BlogPostState extends State<BlogPost> {
                                                 width: 12.0,
                                               ),
                                               Container(
-                                                  margin: EdgeInsets.all(5),
-                                                  child: Icon(Icons.share)),
+                                                margin: EdgeInsets.all(5),
+                                                child: Icon(blogShareIcon),
+                                              ),
                                             ],
                                           ),
                                           onPressed: () => {
@@ -195,7 +197,7 @@ class _BlogPostState extends State<BlogPost> {
                                               (value) => fToast.showToast(
                                                 child: CustomToast(
                                                   blogPostLinkCopied,
-                                                  Icons.check,
+                                                  blogLinkCopiedIcon,
                                                 ),
                                                 gravity: ToastGravity.BOTTOM,
                                                 toastDuration:

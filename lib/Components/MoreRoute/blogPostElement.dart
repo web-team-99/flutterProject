@@ -5,6 +5,8 @@ import 'package:test_url/Components/asyncImageLoader.dart';
 import 'package:test_url/Pages/More/blogPost.dart';
 import 'package:test_url/Setting/numbers.dart';
 import 'package:test_url/Setting/strings.dart';
+import 'package:test_url/Styles/animations.dart';
+import 'package:test_url/Styles/icons.dart';
 
 class BlogPostElement extends StatelessWidget {
   final int _postId;
@@ -55,7 +57,7 @@ class BlogPostElement extends StatelessWidget {
                         Container(
                           margin: EdgeInsets.only(right: 10),
                           child: Icon(
-                            Icons.calendar_today,
+                            blogDateIcon,
                           ),
                         ),
                         Text(
@@ -70,7 +72,7 @@ class BlogPostElement extends StatelessWidget {
                         Container(
                           margin: EdgeInsets.only(right: 10),
                           child: Icon(
-                            Icons.access_time,
+                            blogTimeIcon,
                           ),
                         ),
                         Text(
@@ -99,7 +101,7 @@ class BlogPostElement extends StatelessWidget {
                           context,
                           settings: null,
                           screen: BlogPost(_postId),
-                          pageTransitionAnimation: PageTransitionAnimation.fade,
+                          pageTransitionAnimation: changePageAnimation,
                         )
                       },
                     ),

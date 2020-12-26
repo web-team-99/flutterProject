@@ -7,6 +7,7 @@ import 'package:test_url/Functions/moreFunctions.dart';
 import 'package:test_url/Pages/More/blog.dart';
 import 'package:test_url/Setting/numbers.dart';
 import 'package:test_url/Setting/strings.dart';
+import 'package:test_url/Styles/animations.dart';
 import 'package:test_url/Styles/colors.dart';
 
 class MoreRoute extends StatefulWidget {
@@ -32,22 +33,26 @@ class _MoreRouteState extends State<MoreRoute> {
 
     if (_moreOption != null) {
       if (_moreOption == MoreOption.blog && _blogPostId != null) {
-        WidgetsBinding.instance
-            .addPostFrameCallback((_) => pushNewScreenWithRouteSettings(
-                  context,
-                  settings: null,
-                  screen: Blog(
-                    0,
-                    postId: _blogPostId,
-                  ),
-                ));
+        WidgetsBinding.instance.addPostFrameCallback(
+          (_) => pushNewScreenWithRouteSettings(
+            context,
+            settings: null,
+            screen: Blog(
+              0,
+              postId: _blogPostId,
+            ),
+            pageTransitionAnimation: changePageAnimation,
+          ),
+        );
       } else {
-        WidgetsBinding.instance
-            .addPostFrameCallback((_) => pushNewScreenWithRouteSettings(
-                  context,
-                  settings: null,
-                  screen: getScreen(_moreOption),
-                ));
+        WidgetsBinding.instance.addPostFrameCallback(
+          (_) => pushNewScreenWithRouteSettings(
+            context,
+            settings: null,
+            screen: getScreen(_moreOption),
+            pageTransitionAnimation: changePageAnimation,
+          ),
+        );
       }
     }
   }

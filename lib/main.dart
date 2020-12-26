@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: defaultTheme, //Theme for the bot. navbar
+      theme: defaultTheme, //set main theme
       home: MainScreen(
         initialTab: MainTab.home,
       ),

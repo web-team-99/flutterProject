@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_url/Functions/moreFunctions.dart';
 import 'package:test_url/Setting/strings.dart';
+import 'package:test_url/Styles/icons.dart';
 import 'package:test_url/models/ProviderModels/pricingsModel.dart';
 
 class PricingsWidget extends StatelessWidget {
@@ -29,7 +30,7 @@ class PricingsWidget extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Icon(
-                      Icons.money,
+                      pricingsIcon,
                     ),
                     Expanded(
                       child: Container(

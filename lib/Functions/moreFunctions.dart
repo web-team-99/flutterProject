@@ -39,7 +39,7 @@ IconData getIcon(moreOption) {
       return softWareTeamIcon;
       break;
     default:
-      return Icons.info;
+      return aboutUsIcon;
   }
 }
 
@@ -74,8 +74,6 @@ String getText(moreOption) {
   }
 }
 
-//important comment: if any more page changes to stateful, switch case below must change.
-
 Widget getScreen(moreOption, {blogPostId}) {
   switch (moreOption) {
     case MoreOption.aboutUs:
@@ -109,30 +107,16 @@ Widget getScreen(moreOption, {blogPostId}) {
 
 String getBlogPostDate(String dateTime) {
   //  "1399-09-10T07:43:39.022775+00:00"
-  String englishDate = dateTime.split('-')[0] +
+  String englishDate = dateTime.split('-')[1] +
       '/' +
-      dateTime.split('-')[1] +
+      dateTime.split('-')[2].substring(0, 2) +
       '/' +
-      dateTime.split('-')[2].substring(0, 2);
+      dateTime.split('-')[0];
 
-  return getPersianNumbers(englishDate);
+  return englishDate;
 }
 
 String getBlogPostTime(String dateTime) {
   String englishTime = dateTime.split('T')[1].substring(0, 5);
-  return getPersianNumbers(englishTime);
-}
-
-String getPersianNumbers(String englishNumbers) {
-  return englishNumbers
-      .replaceAll('0', '۰')
-      .replaceAll('1', '۱')
-      .replaceAll('2', '۲')
-      .replaceAll('3', '۳')
-      .replaceAll('4', '۴')
-      .replaceAll('5', '۵')
-      .replaceAll('6', '۶')
-      .replaceAll('7', '۷')
-      .replaceAll('8', '۸')
-      .replaceAll('9', '۹');
+  return englishTime;
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_url/Setting/strings.dart';
+import 'package:test_url/Styles/icons.dart';
 
 class HomeListHeader extends StatelessWidget {
   final String title;
@@ -30,7 +31,7 @@ class HomeListHeader extends StatelessWidget {
                     ),
                     Container(
                         margin: EdgeInsets.all(5),
-                        child: Icon(Icons.read_more)),
+                        child: Icon(viewMoreProjectsAndServicesIcon)),
                   ],
                 ),
               ),

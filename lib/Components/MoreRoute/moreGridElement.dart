@@ -3,6 +3,7 @@ import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:test_url/Enums/moreOptionsEnum.dart';
 import 'package:test_url/Functions/moreFunctions.dart';
 import 'package:test_url/Setting/numbers.dart';
+import 'package:test_url/Styles/animations.dart';
 
 import 'package:test_url/Styles/textStyles.dart';
 
@@ -57,7 +58,7 @@ class GridElement extends StatelessWidget {
                   _moreOption,
                   blogPostId: blogPostId,
                 ),
-          pageTransitionAnimation: PageTransitionAnimation.fade,
+          pageTransitionAnimation: changePageAnimation,
         );
       },
     );

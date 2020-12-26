@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_url/Setting/numbers.dart';
 import 'package:test_url/Setting/strings.dart';
+import 'package:test_url/Styles/icons.dart';
 
 class CustomErrorWidget extends StatelessWidget {
   final _scrollController = ScrollController();
@@ -30,7 +31,7 @@ class CustomErrorWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
-                  Icons.wifi_off,
+                  networkErrorIcon,
                   size: _width / 7,
                 ),
                 Text(networkErrorTitle, style: theme.textTheme.headline2),
