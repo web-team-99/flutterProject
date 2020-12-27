@@ -10,6 +10,7 @@ import 'package:test_url/Routes/moreRoute.dart';
 import 'package:test_url/Routes/profileRoute.dart';
 import 'package:test_url/Routes/searchRoute.dart';
 import 'package:test_url/Setting/numbers.dart';
+import 'package:test_url/Setting/platform.dart';
 import 'package:test_url/Setting/strings.dart';
 import 'package:test_url/Styles/icons.dart';
 import 'package:test_url/Styles/textStyles.dart';
@@ -82,35 +83,35 @@ class _MainScreenState extends State<MainScreen> {
       PersistentBottomNavBarItem(
         icon: Icon(homeIcon),
         // title: homePageTitle,
-        activeColor: theme.backgroundColor,
+        activeColor: isOnIos ? theme.primaryColor : theme.backgroundColor,
         inactiveColor: Colors.grey,
         // titleStyle: TextStyle(fontFamily: mainFontFamily),
       ),
       PersistentBottomNavBarItem(
         icon: Icon(messagesIcon),
         // title: (messagesPageTitle),
-        activeColor: theme.backgroundColor,
+        activeColor: isOnIos ? theme.primaryColor : theme.backgroundColor,
         inactiveColor: Colors.grey,
         // titleStyle: TextStyle(fontFamily: mainFontFamily),
       ),
       PersistentBottomNavBarItem(
         icon: Icon(searchIcon),
         // title: (searchPageTitle),
-        activeColor: theme.backgroundColor,
+        activeColor: isOnIos ? theme.primaryColor : theme.backgroundColor,
         inactiveColor: Colors.grey,
         // titleStyle: TextStyle(fontFamily: mainFontFamily),
       ),
       PersistentBottomNavBarItem(
         icon: Icon(profileIcon),
         // title: (profilePageTitle),
-        activeColor: theme.backgroundColor,
+        activeColor: isOnIos ? theme.primaryColor : theme.backgroundColor,
         inactiveColor: Colors.grey,
         // titleStyle: TextStyle(fontFamily: mainFontFamily),
       ),
       PersistentBottomNavBarItem(
         icon: Icon(moreIcon),
         // title: (morePageTitle),
-        activeColor: theme.backgroundColor,
+        activeColor: isOnIos ? theme.primaryColor : theme.backgroundColor,
         inactiveColor: Colors.grey,
         // titleStyle: TextStyle(fontFamily: mainFontFamily),
       ),
@@ -139,7 +140,9 @@ class _MainScreenState extends State<MainScreen> {
             confineInSafeArea: true,
 
             itemCount: 5,
-            backgroundColor: Color.fromRGBO(43, 45, 66, 1),
+            backgroundColor: isOnIos
+                ? Color.fromRGBO(248, 248, 248, 1)
+                : Color.fromRGBO(43, 45, 66, 1),
             handleAndroidBackButtonPress: true,
             resizeToAvoidBottomInset: true,
             stateManagement: true,
@@ -147,14 +150,15 @@ class _MainScreenState extends State<MainScreen> {
             // hideNavigationBar: _hideNavBar,
             decoration: NavBarDecoration(
               colorBehindNavBar: Theme.of(context).backgroundColor,
-              borderRadius: BorderRadius.circular(15.0),
-              boxShadow: [
-                BoxShadow(
-                  color: Color.fromRGBO(43, 45, 66, 1),
-                  offset: Offset(0.0, -2.0),
-                  blurRadius: 5.0,
-                ),
-              ],
+              boxShadow: isOnIos
+                  ? null
+                  : [
+                      BoxShadow(
+                        color: Color.fromRGBO(43, 45, 66, 1),
+                        offset: Offset(0.0, -2.0),
+                        blurRadius: 5.0,
+                      ),
+                    ],
             ),
             popAllScreensOnTapOfSelectedTab: true,
             itemAnimationProperties: ItemAnimationProperties(

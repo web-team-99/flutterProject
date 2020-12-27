@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test_url/Components/CustomRaisedButton.dart';
 import 'package:test_url/Components/HomeRoute/ProjectAndServiceSuggest.dart';
@@ -43,11 +44,18 @@ class _HomeRouteState extends State<HomeRoute> {
               centerTitle: true,
               textTheme: theme.textTheme,
             )
-          : AppBar(
-              title: Text(homePageTitle),
-              centerTitle: true,
-              textTheme: theme.textTheme,
-            ),
+          : isOnIos
+              ? CupertinoNavigationBar(
+                  middle: Text(
+                    homePageTitle,
+                    style: theme.textTheme.headline5,
+                  ),
+                )
+              : AppBar(
+                  title: Text(homePageTitle),
+                  centerTitle: true,
+                  textTheme: theme.textTheme,
+                ),
       backgroundColor: theme.backgroundColor,
       body: Scrollbar(
         controller: _scrollController,

@@ -22,9 +22,7 @@ IconData manualIcon =
     isOnIos ? CupertinoIcons.square_list : Icons.integration_instructions;
 IconData blogIcon =
     isOnIos ? CupertinoIcons.list_bullet_below_rectangle : Icons.web;
-IconData softWareTeamIcon = isOnIos
-    ? CupertinoIcons.chevron_left_slash_chevron_right
-    : Icons.developer_mode;
+IconData softWareTeamIcon = CupertinoIcons.chevron_left_slash_chevron_right;
 IconData blogDateIcon =
     isOnIos ? CupertinoIcons.calendar : Icons.calendar_today;
 IconData blogTimeIcon = isOnIos ? CupertinoIcons.clock : Icons.access_time;

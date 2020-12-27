@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test_url/Components/MoreRoute/manualWidget.dart';
 import 'package:test_url/Setting/numbers.dart';
+import 'package:test_url/Setting/platform.dart';
 import 'package:test_url/Setting/strings.dart';
 import 'package:provider/provider.dart';
 import '../customErrorWidget.dart';
@@ -34,11 +36,18 @@ class _ManualState extends State<Manual> {
     ThemeData theme = Theme.of(context);
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(manualPageTitle),
-        centerTitle: true,
-        textTheme: theme.textTheme,
-      ),
+      appBar: isOnIos
+          ? CupertinoNavigationBar(
+              middle: Text(
+                manualPageTitle,
+                style: theme.textTheme.headline5,
+              ),
+            )
+          : AppBar(
+              title: Text(manualPageTitle),
+              centerTitle: true,
+              textTheme: theme.textTheme,
+            ),
       backgroundColor: theme.backgroundColor,
       body: FutureBuilder(
           future: manData,

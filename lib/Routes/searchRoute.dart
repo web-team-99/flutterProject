@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:test_url/Setting/numbers.dart';
+import 'package:test_url/Setting/platform.dart';
 import 'package:test_url/Setting/strings.dart';
 import './../Styles/colors.dart';
 import './../Styles/textStyles.dart';
@@ -31,11 +33,18 @@ class _SearchRouteState extends State<SearchRoute> {
     ThemeData theme = Theme.of(context);
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(searchPageTitle),
-        centerTitle: true,
-        textTheme: theme.textTheme,
-      ),
+      appBar: isOnIos
+          ? CupertinoNavigationBar(
+              middle: Text(
+                searchPageTitle,
+                style: theme.textTheme.headline5,
+              ),
+            )
+          : AppBar(
+              title: Text(searchPageTitle),
+              centerTitle: true,
+              textTheme: theme.textTheme,
+            ),
       backgroundColor: theme.backgroundColor,
       body: Scrollbar(
         controller: _scrollController,

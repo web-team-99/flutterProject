@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:test_url/Setting/platform.dart';
 import 'package:test_url/Styles/textStyles.dart';
 
 ThemeData defaultTheme = ThemeData(
@@ -73,5 +75,9 @@ ThemeData defaultTheme = ThemeData(
   ),
   iconTheme: IconThemeData(
     color: Color.fromRGBO(43, 45, 66, 1),
+  ),
+
+  cupertinoOverrideTheme: CupertinoThemeData(
+    primaryColor: Color.fromRGBO(232, 93, 4, 1),
   ),
 );

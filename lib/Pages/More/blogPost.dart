@@ -1,4 +1,5 @@
 import 'package:clipboard/clipboard.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:test_url/Components/asyncImageLoader.dart';
@@ -7,6 +8,7 @@ import 'package:test_url/Pages/customErrorWidget.dart';
 import 'package:test_url/Components/customIndicator.dart';
 import 'package:test_url/Functions/moreFunctions.dart';
 import 'package:test_url/Setting/numbers.dart';
+import 'package:test_url/Setting/platform.dart';
 import 'package:test_url/Setting/serverUrl.dart';
 import 'package:test_url/Setting/strings.dart';
 import 'package:test_url/Styles/icons.dart';
@@ -58,11 +60,18 @@ class _BlogPostState extends State<BlogPost> {
 
     return Scaffold(
       backgroundColor: theme.backgroundColor,
-      appBar: AppBar(
-        title: Text(blogPostPageTitle),
-        centerTitle: true,
-        textTheme: theme.textTheme,
-      ),
+      appBar: isOnIos
+          ? CupertinoNavigationBar(
+              middle: Text(
+                blogPostPageTitle,
+                style: theme.textTheme.headline5,
+              ),
+            )
+          : AppBar(
+              title: Text(blogPostPageTitle),
+              centerTitle: true,
+              textTheme: theme.textTheme,
+            ),
       body: FutureBuilder(
           future: postData,
           builder: (ctx, snapShot) {

@@ -5,7 +5,7 @@ import 'package:test_url/Enums/platformsEnum.dart';
 
 Platforms getCurrentPlatform() {
   if (kIsWeb) {
-    return Platforms.web;
+    return Platforms.web; //Platforms.ios for test ios ui without IOS simulator
   } else if (Platform.isIOS) {
     return Platforms.ios;
   } else if (Platform.isAndroid) {

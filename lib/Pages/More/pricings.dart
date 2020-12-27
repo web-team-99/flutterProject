@@ -1,8 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test_url/Pages/customErrorWidget.dart';
 import 'package:test_url/Components/customIndicator.dart';
 import 'package:test_url/Components/MoreRoute/pricingsWidget.dart';
 import 'package:test_url/Setting/numbers.dart';
+import 'package:test_url/Setting/platform.dart';
 import 'package:test_url/Setting/strings.dart';
 import 'package:test_url/providers/MorePageProviders/pricingProvider.dart';
 import 'package:provider/provider.dart';
@@ -34,11 +36,18 @@ class _PricingsState extends State<Pricings> {
     ThemeData theme = Theme.of(context);
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(pricingsPageTitle),
-        centerTitle: true,
-        textTheme: theme.textTheme,
-      ),
+      appBar: isOnIos
+          ? CupertinoNavigationBar(
+              middle: Text(
+                pricingsPageTitle,
+                style: theme.textTheme.headline5,
+              ),
+            )
+          : AppBar(
+              title: Text(pricingsPageTitle),
+              centerTitle: true,
+              textTheme: theme.textTheme,
+            ),
       backgroundColor: theme.backgroundColor,
       body: FutureBuilder(
         future: pricingsData,

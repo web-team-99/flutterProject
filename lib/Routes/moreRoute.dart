@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
@@ -6,6 +7,7 @@ import 'package:test_url/Enums/moreOptionsEnum.dart';
 import 'package:test_url/Functions/moreFunctions.dart';
 import 'package:test_url/Pages/More/blog.dart';
 import 'package:test_url/Setting/numbers.dart';
+import 'package:test_url/Setting/platform.dart';
 import 'package:test_url/Setting/strings.dart';
 import 'package:test_url/Styles/animations.dart';
 import 'package:test_url/Styles/colors.dart';
@@ -64,11 +66,18 @@ class _MoreRouteState extends State<MoreRoute> {
     ThemeData theme = Theme.of(context);
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(morePageTitle),
-        centerTitle: true,
-        textTheme: theme.textTheme,
-      ),
+      appBar: isOnIos
+          ? CupertinoNavigationBar(
+              middle: Text(
+                morePageTitle,
+                style: theme.textTheme.headline5,
+              ),
+            )
+          : AppBar(
+              title: Text(morePageTitle),
+              centerTitle: true,
+              textTheme: theme.textTheme,
+            ),
       backgroundColor: theme.backgroundColor,
       body: Scrollbar(
         isAlwaysShown: true,

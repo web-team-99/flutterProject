@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test_url/Setting/numbers.dart';
+import 'package:test_url/Setting/platform.dart';
 import 'package:test_url/Setting/strings.dart';
 
 class SoftwareTeam extends StatelessWidget {
@@ -12,11 +14,18 @@ class SoftwareTeam extends StatelessWidget {
     ThemeData theme = Theme.of(context);
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(softwareTeamPageTitle),
-        centerTitle: true,
-        textTheme: theme.textTheme,
-      ),
+      appBar: isOnIos
+          ? CupertinoNavigationBar(
+              middle: Text(
+                softwareTeamPageTitle,
+                style: theme.textTheme.headline5,
+              ),
+            )
+          : AppBar(
+              title: Text(softwareTeamPageTitle),
+              centerTitle: true,
+              textTheme: theme.textTheme,
+            ),
       backgroundColor: theme.backgroundColor,
       body: Scrollbar(
         controller: _scrollController,

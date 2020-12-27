@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:test_url/Components/CustomRaisedButton.dart';
@@ -7,6 +8,7 @@ import 'package:test_url/Components/customIndicator.dart';
 import 'package:test_url/Functions/moreFunctions.dart';
 import 'package:test_url/Pages/More/blogPost.dart';
 import 'package:test_url/Setting/numbers.dart';
+import 'package:test_url/Setting/platform.dart';
 import 'package:test_url/Setting/strings.dart';
 import 'package:test_url/Styles/animations.dart';
 import 'package:test_url/Styles/textStyles.dart';
@@ -55,11 +57,18 @@ class _BlogState extends State<Blog> {
     ThemeData theme = Theme.of(context);
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(blogPageTitle),
-        centerTitle: true,
-        textTheme: theme.textTheme,
-      ),
+      appBar: isOnIos
+          ? CupertinoNavigationBar(
+              middle: Text(
+                blogPageTitle,
+                style: theme.textTheme.headline5,
+              ),
+            )
+          : AppBar(
+              title: Text(blogPageTitle),
+              centerTitle: true,
+              textTheme: theme.textTheme,
+            ),
       backgroundColor: theme.backgroundColor,
       body: FutureBuilder(
           future: blogData,
