@@ -10,7 +10,6 @@ import 'package:test_url/Setting/numbers.dart';
 import 'package:test_url/Setting/platform.dart';
 import 'package:test_url/Setting/strings.dart';
 import 'package:test_url/Styles/animations.dart';
-import 'package:test_url/Styles/colors.dart';
 
 class MoreRoute extends StatefulWidget {
   final MoreOption _moreOption;
@@ -85,14 +84,14 @@ class _MoreRouteState extends State<MoreRoute> {
         child: GridView.count(
           controller: _scrollController,
           padding: EdgeInsets.only(
-            left: _mobileView ? _width / 7 : _width / 6,
+            left: _mobileView ? _width / 8 : _width / 6,
             top: pagesTopMargin,
-            right: _mobileView ? _width / 7 : _width / 6,
+            right: _mobileView ? _width / 8 : _width / 6,
             bottom: pagesBottomMargin,
           ),
           crossAxisCount: _mobileView ? 2 : 4,
-          crossAxisSpacing: _mobileView ? 30.0 : _width / 30,
-          mainAxisSpacing: _mobileView ? 10.0 : _width / 30,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
           shrinkWrap: true,
           children: [
             ...(MoreOption.values as List<MoreOption>).map((option) {

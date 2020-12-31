@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:test_url/Setting/numbers.dart';
 import 'package:test_url/Setting/platform.dart';
 import 'package:test_url/Setting/strings.dart';
-import './../Styles/colors.dart';
-import './../Styles/textStyles.dart';
 
 class ProfileRoute extends StatefulWidget {
   @override

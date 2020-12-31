@@ -7,7 +7,6 @@ import 'package:test_url/Components/HomeRoute/webDesktopHomeFooter.dart';
 import 'package:test_url/Components/HomeRoute/webDesktopHomeImageAndText.dart';
 import 'package:test_url/Components/HomeRoute/webMobileHomeFooter.dart';
 import 'package:test_url/Components/HomeRoute/webMobileHomeImageAndText.dart';
-import 'package:test_url/Enums/platformsEnum.dart';
 import 'package:test_url/Setting/numbers.dart';
 import 'package:test_url/Setting/platform.dart';
 import 'package:test_url/Setting/strings.dart';

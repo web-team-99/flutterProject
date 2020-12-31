@@ -5,8 +5,6 @@ import 'package:test_url/Functions/moreFunctions.dart';
 import 'package:test_url/Setting/numbers.dart';
 import 'package:test_url/Styles/animations.dart';
 
-import 'package:test_url/Styles/textStyles.dart';
-
 class GridElement extends StatelessWidget {
   final MoreOption _moreOption;
   final int blogPostId;
@@ -21,29 +19,27 @@ class GridElement extends StatelessWidget {
 
     return InkWell(
       child: Card(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Flexible(
-              flex: 1,
-              child: Icon(
+        child: Container(
+          padding: EdgeInsets.all(10),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Icon(
                 getIcon(_moreOption),
                 size: _mobileView ? _width / 10 : _width / 25,
                 color: Colors.white,
               ),
-            ),
-            Flexible(
-              flex: 1,
-              child: Text(
+              Text(
                 getText(_moreOption),
+                textAlign: TextAlign.center,
                 style: _mobileView
                     ? theme.textTheme.bodyText1
                     : _width < 800
                         ? theme.textTheme.caption
                         : theme.textTheme.bodyText1,
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
       onTap: () {

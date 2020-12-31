@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:test_url/Functions/moreFunctions.dart';
 import 'package:test_url/Setting/strings.dart';
 import 'package:test_url/Styles/icons.dart';
 import 'package:test_url/models/ProviderModels/pricingsModel.dart';

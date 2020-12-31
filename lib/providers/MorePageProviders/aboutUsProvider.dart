@@ -5,8 +5,6 @@ import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import '../../Setting/serverUrl.dart';
 
-import '../../models/ProviderModels/aboutUsModel.dart';
-
 class AboutUsProvider with ChangeNotifier {
   List<Map<String, String>> _aboutUs;
 

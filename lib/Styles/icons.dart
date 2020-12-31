@@ -17,7 +17,7 @@ IconData aboutUsIcon = isOnIos ? CupertinoIcons.info : Icons.info;
 IconData contactUsIcon = isOnIos ? CupertinoIcons.phone : Icons.contact_phone;
 IconData pricingsIcon = isOnIos ? CupertinoIcons.money_dollar : Icons.money;
 IconData rulesIcon = isOnIos ? CupertinoIcons.text_badge_checkmark : Icons.rule;
-IconData faqIcon = isOnIos ? CupertinoIcons.question : Icons.my_library_books;
+IconData faqIcon = isOnIos ? CupertinoIcons.question : Icons.help;
 IconData manualIcon =
     isOnIos ? CupertinoIcons.square_list : Icons.integration_instructions;
 IconData blogIcon =

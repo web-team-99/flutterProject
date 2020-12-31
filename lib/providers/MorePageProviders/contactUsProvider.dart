@@ -4,7 +4,6 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import '../../Setting/serverUrl.dart';
-import '../../models/ProviderModels/contactUsModel.dart';
 
 class ContactUsProvider with ChangeNotifier {
   List<Map<String, String>> _contactUs;

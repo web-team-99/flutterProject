@@ -3,10 +3,8 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
-import 'package:test_url/Pages/More/faq.dart';
 
 import '../../Setting/serverUrl.dart';
-import '../../models/ProviderModels/faqModel.dart';
 
 class FaqProvider with ChangeNotifier {
   List<Map<String, String>> _faq;

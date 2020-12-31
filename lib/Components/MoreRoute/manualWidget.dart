@@ -57,9 +57,12 @@ class _ManualEntry extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 12.0),
-          child: SelectableText(
-            manualEntry.description,
-            style: theme.textTheme.bodyText1,
+          child: Container(
+            width: double.infinity,
+            child: SelectableText(
+              manualEntry.description,
+              style: theme.textTheme.bodyText1,
+            ),
           ),
         ),
         if (manualEntry.imageUrl != null)

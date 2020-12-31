@@ -5,8 +5,6 @@ import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import '../../Setting/serverUrl.dart';
 
-import '../../models/ProviderModels/blogModel.dart';
-
 class BlogProvider with ChangeNotifier {
   List<Map<String, Object>> _blogs;
 

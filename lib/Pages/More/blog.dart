@@ -11,7 +11,6 @@ import 'package:test_url/Setting/numbers.dart';
 import 'package:test_url/Setting/platform.dart';
 import 'package:test_url/Setting/strings.dart';
 import 'package:test_url/Styles/animations.dart';
-import 'package:test_url/Styles/textStyles.dart';
 import 'package:test_url/providers/MorePageProviders/blogProvider.dart';
 import 'package:provider/provider.dart';
 

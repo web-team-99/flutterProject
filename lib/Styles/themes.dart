@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:test_url/Setting/platform.dart';
 import 'package:test_url/Styles/textStyles.dart';
 
 ThemeData defaultTheme = ThemeData(
@@ -40,7 +39,7 @@ ThemeData defaultTheme = ThemeData(
     caption: TextStyle(
       color: Colors.white,
       fontFamily: mainFontFamily,
-      fontSize: 10,
+      fontSize: 9,
     ),
     bodyText2: TextStyle(
       color: Colors.black,
